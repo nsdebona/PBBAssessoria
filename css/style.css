@@ -119,10 +119,19 @@ header {
 
 .form-titleCalculator {
   text-align: center;
-  margin-bottom: 2rem;
   font-weight: bold;
+  text-transform: uppercase;
   color: #a58e69;
+  margin-bottom: 2rem;
 }
+
+.form-titleSubCalculator {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: normal;
+  color: #fff;
+}
+
 label {
   font-weight: bold;
   color: #f2e0c2;
@@ -141,7 +150,15 @@ input:focus, select:focus {
   border-color: #ff6600;
   box-shadow: 0 0 8px rgba(255, 102, 0, 0.5);
 }
+
+.containerCalculadora {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+
 .btn-orange {
+  width: 100%;
   background-color: #ff6600;
   color: white;
   border: none;
@@ -149,13 +166,15 @@ input:focus, select:focus {
   font-size: 1rem;
   border-radius: 4px;
   transition: color 0.3s ease;
+  padding-top: 1rem;
 }
 .btn-orange:hover {
-  background-color: #a58e69;
+  background-color: #a58e6996;
   color: #1d1d1d;
   transition: 0.2s ease;
 }
 .btn-clear {
+  width: 100%;
   color: #ff6600;
   border: none;
   background-color: #f2e0c2;
@@ -163,9 +182,11 @@ input:focus, select:focus {
   font-size: 1rem;
   text-decoration: none;
   transition: color 0.3s ease;
+  padding-top: 1rem;
 }
 .btn-clear:hover {
   color: #1d1d1d;
+  background-color: #a58e6996;
   transition: 0.2s ease;
   text-decoration: underline;
 }
@@ -237,7 +258,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .gtco-logo img {
-  max-width: 380px;
+  width: 150px;
   border-radius: 20px;
   margin: auto;
 }
@@ -276,7 +297,7 @@ h1, h2, h3, h4, h5, h6, figure {
   transition: 0.5s;
 }
 .gtco-nav ul li a:hover, .gtco-nav ul li a:focus, .gtco-nav ul li a:active {
-  color: #1d1d1d;
+  color: #f2e0c2;
 }
 .gtco-nav ul li.has-dropdown {
   position: relative;
@@ -358,10 +379,10 @@ h1, h2, h3, h4, h5, h6, figure {
   color: #fff;
 }
 .gtco-nav ul li.has-dropdown .dropdown li.active > a {
-  color: #000 !important;
+  color: #f2e0c2 !important;
 }
 .gtco-nav ul li.has-dropdown:hover a, .gtco-nav ul li.has-dropdown:focus a {
-  color: #000;
+  color: #f2e0c2;
 }
 .gtco-nav ul li.btn-cta a {
   color: #52D681;
@@ -387,7 +408,7 @@ h1, h2, h3, h4, h5, h6, figure {
   box-shadow: 0px 14px 20px -9px rgba(0, 0, 0, 0.75);
 }
 .gtco-nav ul li.active > a {
-  color: #000 !important;
+  color: #f2e0c2 !important;
 }
 
 @media screen and (max-width: 480px) {
@@ -589,7 +610,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 15px 20px !important;
 }
 #gtco-footer .gtco-cta .btn-white.btn-outline:hover {
-  color: #000 !important;
+  color: #f2e0c2 !important;
 }
 #gtco-footer .gtco-footer-paragraph img {
   max-width: 380px;
@@ -1458,15 +1479,16 @@ blockquote p > cite {
 .form-control {
   box-shadow: none;
   background: transparent;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  border: 2px solid #a58e691a;
   height: 54px;
   font-size: 18px;
   font-weight: 300;
+  color: #fff;
 }
 .form-control:active, .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #52D681;
+  border-color: #a58e69;
 }
 
 .row-pb-md {
