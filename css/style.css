@@ -1803,6 +1803,10 @@ blockquote p > cite {
   padding: 50px 0;
 }
 
+.divServices {
+  width: 100% !important;
+}
+
 .services-section h2 {
   text-transform: uppercase;
   font-weight: bold;
@@ -1836,7 +1840,7 @@ blockquote p > cite {
 /* Efeito hover */
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 12px 30px #a58e699d;
+  box-shadow: 0px 12px 30px #a58e69bb;
 }
 
 /* Ícones redondos */
@@ -1863,6 +1867,19 @@ blockquote p > cite {
   font-weight: 500;
   margin: 0;
 }
+
+@media (max-width: 767px) { 
+  .rowServices {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  .cardService {
+      flex: 0 0 50%; /* Cada card ocupa 50% da largura */
+      max-width: 50%;
+  }
+}
+
 /* end Services */
 
 
