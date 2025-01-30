@@ -1789,52 +1789,80 @@ blockquote p > cite {
 }
 
 /* footer */
-
 .rowFooter {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap; 
+  justify-content: center; 
   align-items: center;
+  padding: 2.5rem 3.5rem; 
 }
 
 .logoFooter {
   max-width: 280px;
+  margin: auto; 
   padding: 0.5rem;
 }
 
 .titleFooter {
   color: #a58e69;
   text-align: center;
-  font-weight: 500;;
+  font-weight: 500;
 }
 
 .addressFooter {
   color: #f2e0c2;
   font-weight: 500;
   text-align: center;
+  margin-top: 1rem;
 }
 
 .socialLinks {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  padding: 1rem 0;
+  gap: 2rem; 
+  padding: 1rem 1.5rem;
 }
 
 .socialLinks .social-icon {
-  margin: 0 10px; 
   display: inline-block;
+  margin: 0; 
 }
 
 .social-icon img {
-  width: 40px; 
-  height: 40px;
-  transition: transform 0.3s ease;
+  width: 40px !important;
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease; 
 }
 
 .social-icon img:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1);
+  opacity: 0.8; 
 }
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .rowFooter {
+    flex-direction: column; 
+    text-align: center; 
+  }
+
+  .imageFooter, .enderecoFooter, .socialLinks {
+    margin-bottom: 1.5rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .logoFooter {
+    max-width: 200px; 
+  }
+
+  .social-icon img {
+    width: 30px !important;
+    height: auto;
+  }
+}
+
 /* end footer */
 
 /* Copyright */
