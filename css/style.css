@@ -236,9 +236,12 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .gtco-container {
   max-width: 1440px;
+  border-radius: 20px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   background-color: #1d1d1d;
 }
 
@@ -247,8 +250,9 @@ h1, h2, h3, h4, h5, h6, figure {
   top: 0;
   margin: 0;
   padding: 0;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   background-color: #1d1d1d;
 }
 @media screen and (max-width: 768px) {
@@ -1787,6 +1791,80 @@ blockquote p > cite {
   background: none;
   background: #4d4d4d;
 }
+
+/* Services */
+
+.sectionService {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 50px 0;
+}
+
+.services-section h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #a58e69;
+  margin-top: 5rem;
+}
+
+.rowServices {
+  flex: 1 1 auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.cardService {
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+/* Cartões */
+.service-card {
+  height: 320px;
+  background: #a58e69;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* Efeito hover */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 30px #a58e699d;
+}
+
+/* Ícones redondos */
+.service-icon {
+  background-color: #ffde25;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+}
+
+/* Tamanho dos ícones */
+.service-icon img {
+  width: 50px;
+}
+
+/* Texto */
+.service-card p {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  margin: 0;
+}
+/* end Services */
+
 
 /* footer */
 .rowFooter {
