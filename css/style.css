@@ -110,7 +110,7 @@ header {
   box-shadow: 0 4px 6px #1d1d1d;
   border-radius: 8px;
   max-width: 1440px;
-  margin: 2rem auto;
+  margin: 6rem auto;
 }
 .containerCalculator {
   background-color: #545454;
@@ -1792,8 +1792,14 @@ blockquote p > cite {
   background: #4d4d4d;
 }
 
-/* Services */
+.sectionServices {
+  padding: 2em 0;
+  clear: both;
+}
 
+
+
+/* Services */
 .sectionService {
   display: flex;
   justify-content: center;
@@ -1826,7 +1832,7 @@ blockquote p > cite {
   text-align: center;
   transition: 0.3s;
 }
-/* Cartões */
+
 .service-card {
   height: 320px;
   background: #a58e69;
@@ -1837,13 +1843,11 @@ blockquote p > cite {
   transition: 0.3s;
 }
 
-/* Efeito hover */
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0px 12px 30px #a58e69bb;
 }
 
-/* Ícones redondos */
 .service-icon {
   background-color: #ffde25;
   width: 80px;
@@ -1855,12 +1859,10 @@ blockquote p > cite {
   margin: 0 auto 15px;
 }
 
-/* Tamanho dos ícones */
 .service-icon img {
   width: 50px;
 }
 
-/* Texto */
 .service-card p {
   font-size: 14px;
   color: #333;
@@ -1879,9 +1881,82 @@ blockquote p > cite {
       max-width: 50%;
   }
 }
-
 /* end Services */
 
+/* About */
+.sectionAbout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: justify;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+}
+
+.titleAbout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-top: -12rem;
+}
+
+.titleAbout h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #a58e69;
+  margin-top: 5rem;
+  align-items: center !important;
+}
+
+.imgAboutAdvogados {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  padding-right: 6rem;
+}
+
+.imgAboutBalancas {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin-top: 1rem;
+  padding-left: 6rem;
+}
+
+.rowImgBalancas {
+  margin-bottom: -4rem;
+}
+
+.rowImgAdvogados {
+  margin-top: -4rem;
+}
+
+.imgAboutAdvogados img {
+  width: 96px;
+  height: 96px;
+}
+
+.imgAboutBalancas img {
+  width: 96px;
+  height: 96px;
+}
+
+.textAbout p {
+  font-size: 18px;
+  color: #f2e0c2;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+  padding:  6rem;
+}
+/* end About */
 
 /* footer */
 .rowFooter {
@@ -1906,6 +1981,23 @@ blockquote p > cite {
 
 .addressFooter {
   color: #f2e0c2;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.enderecoFooter h3 {
+  color: #a58e69;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-size: 22px;
+}
+
+.enderecoFooter p {
+  color: #f2e0c2;
+  font-size: 18px;
   font-weight: 500;
   text-align: center;
   margin-top: 1rem;
