@@ -10,16 +10,11 @@
 	    	$('.js-gtco-nav-toggle').addClass('');
 
 	    	if ( $('body').hasClass('offcanvas') ) {
-
     			$('body').removeClass('offcanvas');
     			$('.js-gtco-nav-toggle').removeClass('active');
-				
 	    	}
-	    
-	    	
 	    }
 		});
-
 	};
 
 
@@ -340,7 +335,61 @@
 		}
 	};
 
+	var modalHandler = function () {
+		$(".open-modal").click(function (e) {
+			e.preventDefault(); // Evita que o link redirecione
 	
+			// Obtém os dados do botão clicado
+			let imageSrc = $(this).data("img");
+			let text = $(this).data("text");
+	
+			// Atualiza o conteúdo do modal
+			$("#modalImage").attr("src", imageSrc);
+			$("#modalText").text(text);
+	
+			// Gera um link para o WhatsApp com a mensagem personalizada
+			let whatsappMessage = encodeURIComponent("Olá, estou interessado em saber mais sobre: " + text);
+			let whatsappLink = "https://wa.me/5551996537886?text=" + whatsappMessage;
+	
+			// Atualiza o botão do WhatsApp
+			$("#whatsappButton").attr("href", whatsappLink);
+	
+			// Abre o modal
+			$("#imageModal").modal("show");
+		});
+	};
+
+	var initSwiper = function() {
+		if ($('.swiper').length > 0) {
+			var swiper = new Swiper('.swiper', {
+				loop: true,
+				grabCursor: true,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				},
+				breakpoints: {
+					640: {
+						slidesPerView: 1,
+						spaceBetween: 16
+					},
+					768: {
+						slidesPerView: 2,
+						spaceBetween: 18
+					},
+					1188: {
+						slidesPerView: 3,
+						spaceBetween: 24
+					}
+				}
+			});
+		}
+	};	
+
 	$(function(){
 		owlCarousel();
 		mobileMenuOutsideClick();
@@ -353,8 +402,10 @@
 		goToTop();
 		loaderPage();
 		counterWayPoint();
+		modalHandler();
 		changeWayPoint();
+		initSwiper();
 	});
 
-
+	
 }());

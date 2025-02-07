@@ -5,6 +5,8 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 /* =======================================================
 *
 * 	Template Style 
@@ -26,15 +28,49 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background-color: white;
+  background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.logoHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logoImg {
+  height: 50px;
+  cursor: pointer;
+  z-index: 9999 !important;
+}
+
+.logoImg img {
+  width: 220px;
+  height: auto;
+  border-radius: 25px;
+  border: 1px solid #1d1d1d
+}
+
+/* Ícone do WhatsApp */
+.iconWhatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.iconWhatsapp img {
+  width: 50px;
+  height: 50px;
+} 
 
 /* Estilo para o nav */
 .gtco-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: -83px !important;
 }
 
 /* Estilo da lista de navegação */
@@ -43,6 +79,9 @@ header {
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
   gap: 1rem;
 }
 
@@ -64,7 +103,7 @@ header {
 
 /* Logo */
 .gtco-logo img {
-  height: 50px;
+  height: 40px;
   cursor: pointer;
 }
 
@@ -157,7 +196,6 @@ input:focus, select:focus {
   margin-top: 2rem;
 }
 
-
 .btn-orange {
   width: 100%;
   background-color: #ff6600;
@@ -196,8 +234,26 @@ input:focus, select:focus {
   align-items: center;
 }
 /* end calculator */
+
+/* Contact */
+.titleContact {
+  text-align: center;
+  font-weight: bold !important;
+  text-transform: uppercase;
+  color: #a58e69 !important;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.subtitleContact {
+  text-align: center;
+  font-weight: normal;
+  color: #f2e0c2 !important;
+}
+
 a {
   color: #a58e69;
+  font-size: 14px;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -235,14 +291,15 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .gtco-container {
-  max-width: 1440px;
+  background-color: #666565;
   border-radius: 20px;
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  background-color: #1d1d1d;
+  margin: 50px;
+  padding: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .gtco-container {
+    padding: 1rem;
+  }
 }
 
 .gtco-nav {
@@ -251,21 +308,28 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0;
   padding: 0;
   width: 100%;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   background-color: #1d1d1d;
 }
 @media screen and (max-width: 768px) {
   .gtco-nav {
-    padding: 10px 0;
+    padding: 35px 0;
     border-bottom: 1px solid #666666;
+  }
+  .gtco-logo img {
+    width: 180px !important;
+    border-radius: 20px;
+  }
+  .logoImg img {
+    width: 180px !important;
+    border-radius: 20px;
   }
 }
 
 .gtco-logo img {
-  width: 150px;
+  width: 220px !important;
   border-radius: 20px;
-  margin: auto;
 }
 
 .gtco-nav #gtco-logo em {
@@ -290,7 +354,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .gtco-nav ul li > a {
   text-transform: uppercase;
-  font-size: 13px !important;
+  font-size: 20px !important;
   letter-spacing: .05em;
 }
 .gtco-nav ul li a {
@@ -705,17 +769,27 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .gtco-staff img, .gtco-item img {
   margin-bottom: 40px !important;
+  border-radius: 10%;
+  border: 1px solid #f2f2f2;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  -ms-border-radius: 10%;
+  -o-border-radius: 10%;
 }
+
 .gtco-staff h2, .gtco-item h2 {
   font-size: 24px;
-  margin-bottom: 5px;
+  color: #4cae4c;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 15px;
 }
 .gtco-staff h2 a, .gtco-item h2 a {
   color: #000 !important;
 }
 .gtco-staff p, .gtco-item p {
   margin-bottom: 30px;
-  color: #777;
+  color: #f2e0c2 !important;
 }
 .gtco-staff .role, .gtco-item .role {
   color: #bfbfbf;
@@ -990,7 +1064,7 @@ form label {
 }
 
 .gtco-section {
-  padding: 3em 0;
+  padding: 0;
   clear: both;
   position: relative;
 }
@@ -1007,7 +1081,7 @@ form label {
 }
 
 .gtco-heading {
-  margin-bottom: 5em;
+  margin-bottom: 3em;
 }
 .gtco-heading.gtco-heading-sm {
   margin-bottom: 2em;
@@ -1072,7 +1146,7 @@ blockquote p > cite {
   transform: translateX(0px);
 }
 #gtco-offcanvas a {
-  color: rgba(255, 255, 255, 0.5);
+  color: #f2e0c2;
   font-family: "Montserrat", sans-serif;
 }
 #gtco-offcanvas a:hover {
@@ -1117,7 +1191,7 @@ blockquote p > cite {
   -moz-osx-font-smoothing: grayscale;
   content: "\e921";
   font-size: 20px;
-  color: rgba(255, 255, 255, 0.2);
+  color: #f2e0c2;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -1140,7 +1214,7 @@ blockquote p > cite {
 
 .gototop {
   position: fixed;
-  bottom: 20px;
+  bottom: 80px;
   right: 20px;
   z-index: 999;
   opacity: 0;
@@ -1194,18 +1268,18 @@ blockquote p > cite {
   display: inline-block;
   width: 25px;
   height: 2px;
-  color: #252525;
+  color: #a58e69;
   font: bold 14px/.4 Helvetica;
   text-transform: uppercase;
   text-indent: -55px;
-  background: #252525;
+  background: #a58e69;
   transition: all .2s ease-out;
 }
 .gtco-nav-toggle i::before, .gtco-nav-toggle i::after {
   content: '';
   width: 25px;
   height: 2px;
-  background: #252525;
+  background: #a58e69;
   position: absolute;
   left: 0;
   transition: all .2s ease-out;
@@ -1327,6 +1401,8 @@ blockquote p > cite {
 }
 
 .btn-success {
+  cursor: pointer;
+  border-radius: 10px;
   background: #5cb85c;
   color: #fff;
   border: 2px solid #5cb85c;
@@ -1334,6 +1410,7 @@ blockquote p > cite {
 .btn-success:hover, .btn-success:focus, .btn-success:active {
   background: #4cae4c !important;
   border-color: #4cae4c !important;
+  color: #1d1d1d;
 }
 .btn-success.btn-outline {
   background: transparent;
@@ -1579,7 +1656,7 @@ blockquote p > cite {
   color: #fff;
 }
 #gtco-portfolio .gtco-heading p {
-  color: rgba(255, 255, 255, 0.7);
+  color: #f2e0c2;
 }
 
 /* Owl Override Style */
@@ -1792,12 +1869,22 @@ blockquote p > cite {
   background: #4d4d4d;
 }
 
-.sectionServices {
-  padding: 2em 0;
+/* testimonial */
+.setionTestimonial {
+  padding: 6rem;
   clear: both;
 }
 
+.titleTestimonial {
+  color: #a58e69;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
 
+/* end testimonials */
 
 /* Services */
 .sectionService {
@@ -1808,22 +1895,31 @@ blockquote p > cite {
   flex-direction: column;
   padding: 50px 0;
 }
+@media screen and (max-width: 768px) {
+  .sectionService {
+    padding: 20px;
+  }
+}
+
 
 .divServices {
-  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
 }
 
 .services-section h2 {
   text-transform: uppercase;
   font-weight: bold;
-  color: #a58e69;
+  color: #1d1d1d;
   margin-top: 5rem;
 }
 
 .rowServices {
   flex: 1 1 auto;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding: 5rem;
 }
 
 .cardService {
@@ -1834,7 +1930,7 @@ blockquote p > cite {
 }
 
 .service-card {
-  height: 320px;
+  height: 380px;
   background: #a58e69;
   padding: 2rem;
   border-radius: 15px;
@@ -1852,6 +1948,7 @@ blockquote p > cite {
   background-color: #ffde25;
   width: 80px;
   height: 80px;
+  padding-bottom: 20px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1864,9 +1961,12 @@ blockquote p > cite {
 }
 
 .service-card p {
-  font-size: 14px;
-  color: #333;
-  font-weight: 500;
+  font-size: 18px;
+  color: #1d1d1d;
+  font-family: 'roboto', sans-serif;
+  text-align: center;
+  font-weight: 600;
+  padding-top: 1rem;
   margin: 0;
 }
 
@@ -1875,87 +1975,419 @@ blockquote p > cite {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
   }
   .cardService {
       flex: 0 0 50%; /* Cada card ocupa 50% da largura */
       max-width: 50%;
+      padding: 1rem;
+      text-align: center;
+      transition: 0.3s;
+  }
+  .service-card p {
+      font-size: 14px;
+  }
+  .services-section h2 {
+      margin-top: 2rem;
+      font-size: 22px;
   }
 }
 /* end Services */
 
-/* About */
-.sectionAbout {
+/* testimonials */
+#testimonials {
+  background-color: #f2e0c2;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  text-align: justify;
+  flex-direction: column;
+  gap: 60px;
+  padding: 32px 8%;
+}
+
+.rowtestimonial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1620px;
+  gap: 60px;
+}
+
+#testimonials_header {
+  text-align: center;
+}
+
+#testimonials_header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px;
+  color: #3758f9;
+  padding: 2rem;    
+}
+
+#testimonials_header h2 {
+  color: #545454;
+  text-align: center;
+  font-size: 40px;
+}
+
+.swiper {
+  width: 100%;
+  height: 440px;
+  padding-bottom: 60px;
+} 
+
+.swiper-slide {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: center;
+  box-shadow: 0px 0px 20px 0px rgba(92, 115, 160, 0.07);
+  padding: 45px;
+  border-radius: 16px;
+  margin: 5px;
+}
+
+.testimonial-rate {
+  display: flex;
+  gap: 2px;
+}
+
+.testimonial-rate i {
+  color: #f9b707;
+  padding-top: 2rem;
+}
+
+.testimonial-quote {
+  color: #637381;
+  font-size: 16px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 1rem;
+}
+
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-info h3 {
+  font-weight: 600;
+  font-size: 14px;
+  color: #111928;
+}
+
+.author-info p {
+  font-size: 12px;
+  color: #8899a8;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: #fff;
+  width: 25px;
+  height: 25px;
+  color: #3758f9;
+  border: 1px solid #f9fafb;
+  border-radius: 100%;
+  box-shadow: 0px 0px 20px 0px rgba(92, 115, 160, 0.2);
+}
+
+.swiper-button-prev::after {
+  content: '\f053';
+  font-family: 'Font Awesome 5 free';
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.swiper-button-next::after {
+  content: '\f054';
+  font-family: 'Font Awesome 5 free';
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.swiper-button-prev {
+  left: 3px;
+}
+
+.swiper-button-next {
+  right: 3px;
+}
+
+.swiper-pagination.active {
+  background-color: #3758f9;
+}
+
+/* contact */
+
+.sectionContact {
+  padding-top: 6rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.headerContact h1 {
+  font-family: 'roboto', sans-serif;
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #545454;
   padding-top: 1rem;
+  text-align: center;
+}
+
+.headerContact h2 {
+  font-size: 22px;
+  font-weight: 500;
+  font-family: 'roboto', sans-serif;
+  color: #545454;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Conteúdo dos contatos */
+.contactContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Ajusta em telas menores */
+  gap: 20px;
+  padding-top: 4rem;
   padding-bottom: 4rem;
 }
 
-.titleAbout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  text-align: center;
-  margin-top: -12rem;
+/* Lado esquerdo */
+.ladoEsquerdo {
+  flex: 1;
+  text-align: start;
 }
 
-.titleAbout h2 {
+.ladoEsquerdo h4 {
+  font-size: 32px;
+  color: #545454;
+  font-weight: 600;
+  font-family: 'roboto', sans-serif;
+  line-height: 38px;  
+  padding: 1rem;
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  text-transform: uppercase;
-  font-weight: bold;
+  align-items: center;
+  text-align: start;
+}
+
+.ladoEsquerdo h4 i {
+  font-size: 44px;
   color: #a58e69;
-  margin-top: 5rem;
-  align-items: center !important;
+  margin-right: 10px;
 }
 
-.imgAboutAdvogados {
-  display: flex;
-  justify-content: end;
-  align-items: end;
-  padding-right: 6rem;
+/* Lado direito */
+.ladoDireito {
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
 }
 
-.imgAboutBalancas {
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  margin-top: 1rem;
-  padding-left: 6rem;
+.ladoDireito p {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 32px;
+  font-family: 'roboto', sans-serif;
+  line-height: 28px;
+  color: #545454;
+  padding: 1rem;
+  
 }
 
-.rowImgBalancas {
-  margin-bottom: -4rem;
+/* Botão do WhatsApp */
+.ladoDireito .btn {
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 20px;
+  background-color: #25d366;
+  border: 1px solid #545454;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
 }
 
-.rowImgAdvogados {
-  margin-top: -4rem;
+.ladoDireito .btn i {
+  font-size: 42px;
+  margin-right: 8px;
 }
 
-.imgAboutAdvogados img {
-  width: 96px;
-  height: 96px;
+.gradient-line {
+  width: 100%;
+  height: 16px; /* Altura da linha */
+  background: linear-gradient(to right, #a58e69, #545454);
+  margin: 20px 0; /* Espaçamento acima e abaixo da linha */
 }
 
-.imgAboutBalancas img {
-  width: 96px;
-  height: 96px;
+.gradient-line-shadow {
+  width: 80%;
+  height: 16px; /* Altura da linha */
+  background: linear-gradient(to right, #a58e69, #545454);
+  border-radius: 8px; /* Cantos arredondados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+  margin: 30px 0; /* Espaçamento acima e abaixo da linha */
 }
 
-.textAbout p {
-  font-size: 18px;
-  color: #f2e0c2;
-  font-weight: 500;
+.containerService {
+  max-width: 1800px;
+  background-color: #666565;
+  border-radius: 20px;;
+}
+/* About */
+
+/* Estilização geral da seção */
+.sectionAbout {
+  padding: 0;
   margin: 0;
   text-align: center;
-  padding:  6rem;
 }
+
+/* Container principal */
+.containerAbout {
+  max-width: 1800px;
+  background-color: #666565;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.rowAboutMission {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem; /* Espaço entre colunas */
+  flex-wrap: wrap; /* Garante responsividade */
+}
+
+/* Título */
+.rowAbout h1 {
+  width: 100%;
+  text-align: center;;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: 'roboto', sans-serif;
+  color: #a58e69;
+  text-transform: uppercase;
+}
+
+/* Layout da linha */
+.rowAbout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* Espaço entre colunas */
+  flex-wrap: wrap; /* Garante responsividade */
+  padding-bottom: 2rem;
+}
+
+/* Coluna da Imagem */
+.col img {
+  width: 100%;
+  max-width: 650px; /* Limita o tamanho da imagem */
+  height: auto;
+  border-radius: 20px;
+  box-shadow: #a58e69 0px 0px 0px 3px;
+}
+
+.colAbout {
+  border-radius: 20px;
+  padding-top: 1rem;
+}
+
+.colAboutTxt {
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.colAbout p {
+  font-size: 18px;
+  font-family: 'roboto', sans-serif;
+  color: #f2e0c2;
+}
+
+/* Coluna do Texto */
+.paragraphAbout {
+  width: 100%;
+  font-size: 18px;
+  font-family: 'roboto', sans-serif;
+  color: #f2e0c2;
+  line-height: 1.6;
+  text-align: justify;
+  max-width: 550px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: #a58e69 0px 0px 0px 3px;
+}
+
+.missionAbout, .visionAbout {
+  font-size: 36px;
+  font-weight: bold;
+  font-family: 'roboto', sans-serif;
+  color: #a58e69 !important;
+  text-transform: uppercase;
+  gap: 4rem;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .rowAbout {
+      flex-direction: column; /* Empilha os elementos no mobile */
+      text-align: center;
+  }
+
+  .paragraphAbout {
+      text-align: center; /* Centraliza o texto */
+      padding: 10px;
+  }
+}
+
+
+/* Estilos responsivos
+@media (max-width: 768px) {
+
+  .titleAbout {
+    margin-top: -3rem;
+    font-size: 22px;
+  }
+  .imgAboutBalancas, .imgAboutAdvogados {
+    padding: 2rem;
+  }
+  .imgAboutBalancas img, .imgAboutAdvogados img {
+    width: 65px;
+    height: 75px;
+  }
+  .textAbout p {
+    font-size: 14px;
+    padding: 2rem;
+  } 
+} */
 /* end About */
 
 /* footer */

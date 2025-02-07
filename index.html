@@ -20,6 +20,8 @@
 		<!-- Bootstrap  -->
 		<link rel="stylesheet" href="css/bootstrap.css">
 
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<!-- Owl Carousel  -->
 		<link rel="stylesheet" href="css/owl.carousel.min.css">
 		<link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -33,27 +35,35 @@
 
 	<body>
 		<header>
-			<nav class="gtco-nav" role="navigation">
-				<div class="gtco-container">
-					<div class="col-6 col-md-4 gtco-logo">
-						<img src="images/PBB_Assessoria.svg" alt="PBB Assessoria Jurídica" href="index.html"></div>
-					</div>
+			<div class="logoHeader">
+				<div class="col-md-6 col-md-4 logoImg">
+					<img src="images/PBB_Assessoria.svg" alt="PBB Assessoria Jurídica" href="index.html"></div>
 				</div>
-				<div class="col-12 col-md-8 text-right menu-1">
+			</div>
+			<nav class="gtco-nav" role="navigation">
+				<div class="col-md-12 col-md-8 text-right menu-1">
 					<ul>
 						<li class="active"><a href="index.html">Inicio</a></li>
-						<li><a href="portfolio.html">Calculadora</a></li>
-						<li><a href="services.html">Serviços</a></li>
-						<li><a href="contact.html">Contatos</a></li>
-						<li><a href="about.html">Quem Somos</a></li>
+						<li><a href="#calculator">Calculadora</a></li>
+						<li><a href="#services">Serviços</a></li>
+						<li><a href="#contact">Contatos</a></li>
+						<li><a href="#about">Quem Somos</a></li>
+						<li><a href="#testimonials">Depoimentos</a></li>
 					</ul>
 				</div>
 			</nav>
 		</header>
 
 		<div id="page">
+
+			<div class="iconWhatsapp">
+				<a href="https://wa.me/5551995746554?text=Olá, gostaria de uma consultoria!" rel="noopener" target="_blank">
+					<img src="https://static.cdnlogo.com/logos/w/29/whatsapp-icon.svg" alt="WhatsApp link" class="img-fluid">
+				</a>
+			</div>
+
 			<!-- Calculator Section -->
-			<section class="calculator-section">
+			<section class="calculator-section" id="calculator">
 				<div class="containerCalculator">
 					<h2 class="form-titleCalculator">Calculadora online Revisional</h2>
 					<h3 class="form-titleSubCalculator">Informe os dados do seu financiamento</h3>
@@ -107,52 +117,14 @@
 					</form>
 				</div>
 			</section>			
-
-			<!-- Carrosel  -->
-			<section class="sectionCarrosel">
-				<div class="gtco-container">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="owl-carousel owl-carousel-fullwidth">
-								<div class="item">
-									<a href="#">
-										<img src="images/slider_1.jpg" alt="Free Website Template by FreeHTML5.co">
-										<div class="slider-copy">
-											<h2>Architecture #1</h2>
-										</div>
-									</a>
-								</div>
-								<div class="item">
-									<a href="#">
-										<img src="images/slider_2.jpg" alt="Free Website Template by FreeHTML5.co">
-										<div class="slider-copy">
-											<h2>Architecture #1</h2>
-										</div>
-									</a>
-								</div>
-								<div class="item">
-									<a href="#">
-										<img src="images/slider_3.jpg" alt="Free Website Template by FreeHTML5.co">
-										<div class="slider-copy">
-											<h2>Architecture #1</h2>
-										</div>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- End Carrosel -->
-
+			
 			<!-- Contact -->
-			<section class="sectionServices">
-				<div class="gtco-section">
-				<div class="gtco-container">
-					<div class="row">
+			<section class="sectionService" id="services">
+				<div class="containerService">
+					<div class="row rowContact">
 						<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
-							<h2>Entrar em contato</h2>
-							<p>Fale com nossa equipe e descubra a melhor estratégia para solucionar seus problemas.</p>
+							<h2 class="titleContact">Entrar em contato</h2>
+							<p class="subtitleContact">Fale com nossa equipe e descubra a melhor estratégia para solucionar seus problemas.</p>
 						</div>
 					</div>
 					<div class="row">
@@ -160,132 +132,73 @@
 							<div class="owl-carousel owl-carousel-carousel">
 								<div class="item">
 									<div class="gtco-item">
-										<a href="#"><img src="images/img_1.jpg" alt="" class="img-responsive"></a>
-										<h2><a href="#">New York Arena</h2></a>
-										<p class="role">New York</p>
+										<a href="#" class="open-modal" data-img="images/img_1.jpg" data-text="Descrição sobre New York Arena.">
+											<img src="images/revisional.webp" alt="" class="img-responsive">
+										</a>
+										<h2>Ações Revisionais</h2>
+										<p class="role">A PBB Assessoria atua com excelência em ações revisionais, ajustando contratos para condições mais justas, e na elaboração de defesas estratégicas em processos de busca e apreensão, assegurando os direitos e a tranquilidade de seus clientes com total segurança jurídica e eficiência.</p>
+										<a href="https://wa.me/5551995746554?text=Olá, gostaria de atendimento para Ações Revisionais!" 
+											rel="noopener"
+											target="_blank"
+											class="btn btn-success d-flex align-items-center">
+											<i class="bi bi-whatsapp me-2"></i> Entrar em Contato
+										</a>
 									</div>
 								</div>
 								<div class="item">
 									<div class="gtco-item">
-										<a href="#"><img src="images/img_2.jpg" alt="" class="img-responsive"></a>
-										<h2><a href="#">Eagle Park</h2></a>
-										<p class="role">London</p>
+										<a href="#" class="open-modal" data-img="images/img_2.jpg" data-text="Descrição sobre Eagle Park.">
+											<img src="images/titulos.webp" alt="" class="img-responsive">
+										</a>
+										<h2>Execução de Título</h2>
+										<p class="role">A PBB Assessoria é especializada em defesas em ações de execução de título extrajudicial e monitória, atuando estrategicamente para contestar cobranças indevidas, apresentar argumentos jurídicos sólidos e garantir a proteção dos direitos e interesses de seus clientes com máxima dedicação e responsabilidade.</p>
+										<a href="https://wa.me/5551995746554?text=Olá, gostaria de atendimento para Execução de Título!" 
+											rel="noopener"
+											target="_blank"
+											class="btn btn-success d-flex align-items-center">
+											<i class="bi bi-whatsapp me-2"></i> Entrar em Contato
+										</a>
 									</div>
 								</div>
 								<div class="item">
 									<div class="gtco-item">
-										<a href="#"><img src="images/img_3.jpg" alt="" class="img-responsive"></a>
-										<h2><a href="#">Nationals Park</h2></a>
-										<p class="role">Paris, France</p>
-									</div>
-								</div>
-
-								<div class="item">
-									<div class="gtco-item">
-										<a href="#"><img src="images/img_1.jpg" alt="" class="img-responsive"></a>
-										<h2><a href="#">New York Arena</h2></a>
-										<p class="role">New York</p>
-									</div>
-								</div>
-								<div class="item">
-									<div class="gtco-item"> 	
-										<a href="#"><img src="images/img_2.jpg" alt="" class="img-responsive"></a>
-										<h2><a href="#">Eagle Park</h2></a>
-										<p class="role">London</p>
+										<a href="#" class="open-modal" data-img="images/img_3.jpg" data-text="Descrição sobre Nationals Park.">
+											<img src="images/leilao.webp" alt="" class="img-responsive">
+										</a>
+										<h2>Leilão Extrajudicial</h2>
+										<p class="role">A PBB Assessoria é referência em ações de suspensão de leilão extrajudicial, trabalhando de forma estratégica para proteger o patrimônio de seus clientes, identificando irregularidades no processo e garantindo que seus direitos sejam preservados com total segurança jurídica.</p>
+										<a href="https://wa.me/5551995746554?text=Olá, gostaria de atendimento para Leilão Extrajudicial!" 
+											rel="noopener"
+											target="_blank"
+											class="btn btn-success d-flex align-items-center">
+											<i class="bi bi-whatsapp me-2"></i> Entrar em Contato
+										</a>
 									</div>
 								</div>
 								<div class="item">
 									<div class="gtco-item">
-										<a href="#"><img src="images/img_3.jpg" alt="" class="img-responsive"></a>
-										<h2><a href="#">Nationals Park</h2></a>
-										<p class="role">Paris, France</p>
-									</div>
-								</div>
-
-								<div class="item">
-									<div class="gtco-item">
-										<a href="#"><img src="images/img_1.jpg" alt="" class="img-responsive"></a>
-										<h2><a href="#">New York Arena</h2></a>
-										<p class="role">New York</p>
-									</div>
-								</div>
-								<div class="item">
-									<div class="gtco-item">
-										<a href="#"><img src="images/img_2.jpg" alt="" class="img-responsive"></a>
-										<h2><a href="#">Eagle Park</h2></a>
-										<p class="role">London</p>
-									</div>
-								</div>
-								<div class="item">
-									<div class="gtco-item">
-										<a href="#"><img src="images/img_3.jpg" alt="" class="img-responsive"></a>
-										<h2><a href="#">Nationals Park</h2></a>
-										<p class="role">Paris, France</p>
+										<a href="#" class="open-modal" data-img="images/img_3.jpg" data-text="Descrição sobre Nationals Park.">
+											<img src="images/multas.JPG" alt="" class="img-responsive">
+										</a>
+										<h2>Multas de Transito</h2>
+										<p class="role">A PBB Assessoria oferece suporte especializado na elaboração de recursos de multas, analisando cada caso com atenção aos detalhes para identificar irregularidades e garantir a melhor defesa administrativa e judicial, buscando a redução ou anulação das penalidades com segurança e compromisso com seus clientes.</p>
+										<a href="https://wa.me/5551995746554?text=Olá, gostaria de atendimento para Multas de Transito!" 
+											rel="noopener"
+											target="_blank"
+											class="btn btn-success d-flex align-items-center">
+											<i class="bi bi-whatsapp me-2"></i> Entrar em Contato
+										</a>
 									</div>
 								</div>
 							</div>
 						</div>
-						
 					</div>
 				</div>
-				</div>
-			</section>
+			</section> 
 			<!-- End contact -->
 
-			<!-- testimonials -->
-			<section class="sectionContact">
-				<div class="gtco-section">
-					<div class="gtco-container">
-						<div class="row">
-							<div class="col-md-6 gtco-news">
-								<h2>ENTRE EM CONTATO</h2>	
-								<ul>
-									<li>
-										<a href="#">
-											<span class="post-date">September 10, 2016</span>
-											<h3>Manila Bridge Re-construction</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...</p>
-										</a>
-									</li>
-
-									<li>
-										<a href="#">
-											<span class="post-date">September 10, 2016</span>
-											<h3>Manila Bridge Re-construction</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...</p>
-										</a>
-									</li>
-
-									<li>
-										<a href="#">
-											<span class="post-date">September 10, 2016</span>
-											<h3>Manila Bridge Re-construction</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod...</p>
-										</a>
-									</li>
-								</ul>
-								<p><a href="#" class="btn btn-sm btn-special">More News</a></p>
-							</div>
-							<!-- END News -->
-							<div class="col-md-5 col-md-push-1 gtco-testimonials">
-								<h2>Testimonials</h2>
-								<blockquote>
-									<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.&ldquo;</p>
-									<p class="author"><cite>&mdash; John Doe Dueller</cite></p>
-								</blockquote>
-								<blockquote>
-									<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.&ldquo;</p>
-									<p class="author"><cite>&mdash; John Doe Dueller</cite></p>
-								</blockquote>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- End News  -->
-			
 			<!-- Service -->
-			<section class="sectionService">
+			<section class="sectionService" id="services">
 				<div class="gtco-container divServices">
 					<div class="services-section align-items-center">
 						<h2>Conheça nossos Serviços</h2>
@@ -347,34 +260,179 @@
 					</div>
 				</div>
 			</section>
+			<!-- End service -->
 
 			<!-- About -->
-			<section class="sectionAbout">
-				<div class="gtco-container">
-					<div class="row rowImgBalancas">
-						<div class="col-2 imgAboutBalancas">
-							<img src="images/balancas.png" alt="Balancas da justiça">
+			<section class="sectionAbout" id="about">
+				<div class="containerAbout">
+					<div class="row rowAbout">
+						<h1>Sobre Nós</h1>
+						<div class="col colAboutTxt">
+							<div class="paragraphAbout">
+								<p>
+									Somos uma assessoria contenciosa especializada em Direito Bancário, Direito do Consumidor e Direito do Condutor.
+								</p>
+								<p>	
+									Nossa equipe é formada por profissionais jovens, dinâmicos e altamente experientes, sempre comprometidos em oferecer soluções jurídicas eficazes e personalizadas.
+								</p>
+								<p>
+									Acreditamos em uma advocacia humanizada, pautada na transparência, no atendimento próximo e no compromisso com os melhores interesses de nossos clientes. Nosso objetivo é proporcionar segurança jurídica e estratégias assertivas, sempre com excelência e dedicação.
+								</p>
+								<p>
+									Conte conosco para uma assessoria que alia conhecimento, inovação e proximidade no acompanhamento de suas demandas jurídicas.
+								</p>
+							</div>					
+						</div>
+						<div class="col colAbout">
+							<img src="images/aboutT1.jpg" alt="Advogado Fotos de banco de imagens por Vecteezy">
 						</div>
 					</div>
-					<div class="row titleAbout">
-						<h2>Sobre nós</h2>
+					<div class="row rowAboutMission">
+						<div class="col colAbout">
+							<h1 class="missionAbout">Missão</h1>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit!</p>
+						</div>
+						<div class="col colAbout">
+							<h1 class="visionAbout">Visão</h1>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit!</p>
+						</div>
 					</div>
-					<div class="row align-items-start rowTextAbout">
-						<div class="col-8 textAbout">
-							<p>	    Somos uma assessoria contenciosa especializada em Direito Bancário, Direito do Consumidor e Direito do Condutor. Nossa equipe é formada por profissionais jovens, dinâmicos e altamente experientes, sempre comprometidos em oferecer soluções jurídicas eficazes e personalizadas.
-								Acreditamos em uma advocacia humanizada, pautada na transparência, no atendimento próximo e no compromisso com os melhores interesses de nossos clientes. Nosso objetivo é proporcionar segurança jurídica e estratégias assertivas, sempre com excelência e dedicação.								
-								Conte conosco para uma assessoria que alia conhecimento, inovação e proximidade no acompanhamento de suas demandas jurídicas.</p>
-							</div>
-						</div>
-						<div class="row rowImgAdvogados">
-							<div class="col-2 justify-content-center imgAboutAdvogados">
-								<img src="images/advogado.png" alt="3 advogados atras do palanque">
-							</div>
-						</div>
 				</div>
 			</section>
-			<!-- End Contact -->
+			<!-- end about -->
 
+			<!-- Contact -->
+			<section class="sectionContact" id="contact">
+				<div class="headerContact">
+					<h1>Contato</h1>
+					<h2>Conte conosco para uma assessoria que alia <b>conhecimento, inovação, qualificação e proximidade</b>  no acompanhamento de suas demandas jurídicas.</h2>
+				</div>
+				<div class="contactContent">
+					<div class="ladoEsquerdo">
+						<h4><i class="fa-solid fa-phone"></i>  (51) 995 746 554</h4>
+						<h4><i class="fa-solid fa-envelope"></i> pbbassessoria@gmail.com</h4>
+					</div>
+					<div class="ladoDireito">
+						<p>Para maiores informações nos chame no WhatsApp!</p>
+						<a href="https://wa.me/5551995746554?text=Ol%C3%A1%2C%20gostaria%20de%20atendimento!" 
+							rel="noopener"
+							target="_blank"
+							class="btn btn-success d-flex align-items-center">
+							<i class="fab fa-whatsapp"></i> Entrar em Contato
+						</a>
+					</div>
+				</div>
+				<div class="gradient-line"></div>
+			</section>
+			<!-- end #contact -->
+
+			<!-- Testimonials -->
+			<section id="testimonials">
+				<div id="testimonials_header">
+					<h1>Avaliações</h1>
+					<h2>
+						O que os clientes dizem sobre nosso atendimento!
+					</h2>
+				</div>
+							<div class="swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="testimonial-rate">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
+										<blockquote class="testimonial-quote">
+								"Experiência incrível! Desde o primeiro contato, fui muito bem atendido e recebi 
+								todas as informações de forma clara. Recomendo para todos!"
+							</blockquote>
+										<div class="testimonial-author">
+								<div class="author-avatar">
+									<img src="images/person_1.jpg" alt="Imagem de uma pessoa">
+								</div>
+											<div class="author-info">
+									<h3>Fulano de Tal</h3>
+									<p>Cliente desde 2023</p>
+								</div>
+							</div>
+						</div>
+									<div class="swiper-slide">
+							<div class="testimonial-rate">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
+										<blockquote class="testimonial-quote">
+								"Experiência incrível! Desde o primeiro contato, fui muito bem atendido e recebi 
+								todas as informações de forma clara. Recomendo para todos!"
+							</blockquote>
+										<div class="testimonial-author">
+								<div class="author-avatar">
+									<img src="images/person_3.jpg" alt="Imagem de uma pessoa">
+								</div>
+											<div class="author-info">
+									<h3>Fulano de Tal</h3>
+									<p>Cliente desde 2020</p>
+								</div>
+							</div>
+						</div>
+									<div class="swiper-slide">
+							<div class="testimonial-rate">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
+										<blockquote class="testimonial-quote">
+								"Experiência incrível! Desde o primeiro contato, fui muito bem atendido e recebi 
+								todas as informações de forma clara. Recomendo para todos!"
+							</blockquote>
+										<div class="testimonial-author">
+								<div class="author-avatar">
+									<img src="images/person_2.jpg" alt="Imagem de uma pessoa">
+								</div>
+											<div class="author-info">
+									<h3>Fulano de Tal</h3>
+									<p>Cliente desde 2021</p>
+								</div>
+							</div>
+						</div>
+									<div class="swiper-slide">
+							<div class="testimonial-rate">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
+										<blockquote class="testimonial-quote">
+								"Experiência incrível! Desde o primeiro contato, fui muito bem atendido e recebi 
+								todas as informações de forma clara. Recomendo para todos!"
+							</blockquote>
+										<div class="testimonial-author">
+								<div class="author-avatar">
+									<img src="images/person_1.jpg" alt="Imagem de uma pessoa">
+								</div>
+											<div class="author-info">
+									<h3>Fulano de Tal</h3>
+									<p>Cliente desde 2018</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-pagination"></div>
+				
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+			</section>
+			<!-- End testimonials -->
+			
 			<!-- Footer -->
 			<footer id="gtco-footer" class="gtco-sectionFooter" role="contentinfo">
 				<div class="row rowFooter text-center text-md-start">
@@ -384,7 +442,6 @@
 					</div>
 					<!-- Endereço -->
 					<div class="col-12 col-md-4 mb-3 mb-md-0 enderecoFooter">
-						<h3 class="titleFooter">Endereço</h3>
 						<p class="addressFooter">Rua Santo Inácio, Bairro Moinhos de Vento<br>Porto Alegre - Rio Grande do Sul<br>CEP 90570-150</p>
 					</div>
 					<!-- Ícones de Redes Sociais -->
@@ -425,19 +482,21 @@
 			<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 		</div>
 		
-		<!-- jQuery -->
-		<script src="js/jquery.min.js"></script>
-		<!-- jQuery Easing -->
-		<script src="js/jquery.easing.1.3.js"></script>
-		<!-- Bootstrap -->
-		<script src="js/bootstrap.min.js"></script>
-		<!-- Waypoints -->
-		<script src="js/jquery.waypoints.min.js"></script>
-		<!-- Carousel -->
-		<script src="js/owl.carousel.min.js"></script>
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
 
-		<!-- Main -->
-		<script src="js/main.js"></script>
 
 	</body>
 </html>
