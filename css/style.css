@@ -1142,7 +1142,7 @@ blockquote p > cite {
 }
 @media screen and (max-width: 768px) {
   #gtco-offcanvas {
-    display: block;
+    display: none !important;
   }
 }
 .offcanvas #gtco-offcanvas {
