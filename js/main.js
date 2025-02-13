@@ -375,7 +375,7 @@
 				breakpoints: {
 					640: {
 						slidesPerView: 1,
-						spaceBetween: 16
+						spaceBetween: 12
 					},
 					768: {
 						slidesPerView: 2,
