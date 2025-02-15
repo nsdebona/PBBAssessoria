@@ -119,8 +119,6 @@
 		// }, { offset: '90%'} );
 	};
 
-
-
 	var changeWayPoint = function() {
 		var i = 0;
 
@@ -335,29 +333,29 @@
 		}
 	};
 
-	var modalHandler = function () {
-		$(".open-modal").click(function (e) {
-			e.preventDefault(); // Evita que o link redirecione
+	// var modalHandler = function () {
+	// 	$(".open-modal").click(function (e) {
+	// 		e.preventDefault(); // Evita que o link redirecione
 	
-			// Obtém os dados do botão clicado
-			let imageSrc = $(this).data("img");
-			let text = $(this).data("text");
+	// 		// Obtém os dados do botão clicado
+	// 		let imageSrc = $(this).data("img");
+	// 		let text = $(this).data("text");
 	
-			// Atualiza o conteúdo do modal
-			$("#modalImage").attr("src", imageSrc);
-			$("#modalText").text(text);
+	// 		// Atualiza o conteúdo do modal
+	// 		$("#modalImage").attr("src", imageSrc);
+	// 		$("#modalText").text(text);
 	
-			// Gera um link para o WhatsApp com a mensagem personalizada
-			let whatsappMessage = encodeURIComponent("Olá, estou interessado em saber mais sobre: " + text);
-			let whatsappLink = "https://wa.me/5551996537886?text=" + whatsappMessage;
+	// 		// Gera um link para o WhatsApp com a mensagem personalizada
+	// 		let whatsappMessage = encodeURIComponent("Olá, estou interessado em saber mais sobre: " + text);
+	// 		let whatsappLink = "https://wa.me/5551996537886?text=" + whatsappMessage;
 	
-			// Atualiza o botão do WhatsApp
-			$("#whatsappButton").attr("href", whatsappLink);
+	// 		// Atualiza o botão do WhatsApp
+	// 		$("#whatsappButton").attr("href", whatsappLink);
 	
-			// Abre o modal
-			$("#imageModal").modal("show");
-		});
-	};
+	// 		// Abre o modal
+	// 		$("#imageModal").modal("show");
+	// 	});
+	// };
 
 	var initSwiper = function() {
 		if ($('.swiper').length > 0) {
@@ -402,7 +400,6 @@
 		goToTop();
 		loaderPage();
 		counterWayPoint();
-		modalHandler();
 		changeWayPoint();
 		initSwiper();
 	});

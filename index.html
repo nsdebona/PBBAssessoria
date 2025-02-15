@@ -35,76 +35,82 @@
 
 	<body>
 		<header>
-			<div class="logoHeader">
-				<div class="col-md-6 col-md-4 logoImg">
-					<img src="images/PBB_Assessoria.svg" alt="PBB Assessoria Jurídica" href="index.html"></div>
+			<div class="container-header">
+				<div class="logoHeader">
+					<div class="logoImg">
+						<img src="images/PBB_Assessoria.svg" alt="PBB Assessoria Jurídica" href="#topo">
+					</div>
 				</div>
+				<nav class="gtco-nav" role="navigation">
+					<div class="menu-1">
+						<ul>
+							<li><a href="#topo">Início</a></li>
+							<li><a href="#calculadora">Calculadora</a></li>
+							<li><a href="#services">Serviços</a></li>
+							<li><a href="#contact">Contatos</a></li>
+							<li><a href="#about">Quem Somos</a></li>
+							<li><a href="#testimonials">Depoimentos</a></li>
+						</ul>
+					</div>
+				</nav>
 			</div>
-			<nav class="gtco-nav" role="navigation">
-				<div class="col-md-12 col-md-8 text-right menu-1">
-					<ul>
-						<li class="active"><a href="index.html">Inicio</a></li>
-						<li><a href="#calculator">Calculadora</a></li>
-						<li><a href="#services">Serviços</a></li>
-						<li><a href="#contact">Contatos</a></li>
-						<li><a href="#about">Quem Somos</a></li>
-						<li><a href="#testimonials">Depoimentos</a></li>
-					</ul>
-				</div>
-			</nav>
 		</header>
-
+		<!-- Adicione um elemento com id="topo" no topo da página -->
+		<div id="topo"></div>
 		<div id="page">
-
+			<!-- whatsapp icon -->
 			<div class="iconWhatsapp">
 				<a href="https://wa.me/5551995746554?text=Olá, gostaria de uma consultoria!" rel="noopener" target="_blank">
 					<img src="https://static.cdnlogo.com/logos/w/29/whatsapp-icon.svg" alt="WhatsApp link" class="img-fluid">
 				</a>
 			</div>
+			<!-- blankSpace -->
+			<div class="spaceHeader">
+			</div>
 
 			<!-- Calculator Section -->
-			<section class="calculator-section" id="calculator">
+			<section class="calculator-section" id="calculadora">
 				<div class="containerCalculator">
 					<h2 class="form-titleCalculator">Calculadora online Revisional</h2>
 					<h3 class="form-titleSubCalculator">Informe os dados do seu financiamento</h3>
-					<form>
+					<form id="calculadoraForm">
 						<div class="row g-3">
 							<div class="col-md-6">
 								<label for="valorFinanciado" class="form-label">Valor financiado</label>
-								<input type="text" class="form-control" id="valorFinanciado" placeholder="">
+								<input type="text" class="form-control money" id="valorFinanciado" placeholder="R$ x.xxx,xx" required>
 							</div>
 							<div class="col-md-6">
 								<label for="valorPrestacao" class="form-label">Valor da prestação</label>
-								<input type="text" class="form-control" id="valorPrestacao" placeholder="">
+								<input type="text" class="form-control money" id="valorPrestacao" placeholder="R$ x.xxx,xx" required>
 							</div>
 							<div class="col-md-6">
-								<label for="tipoContrato" class="form-label">Tipo do Contrato</label>
-								<select id="tipoContrato" class="form-select">
-									<option selected>Selecione</option>
+								<label for="tipoContrato" class="form-label">Tipo do Contrato: </label>
+								<select id="tipoContrato" class="form-select" required>
+									<option selected disabled>Selecione</option>
 									<option value="1">Imobiliário</option>
-									<option value="2">Veiculo</option>
-									<option value="3">Credito Pessoal</option>
-									<option value="4">Credito Capital Giro</option>
+									<option value="2">Veículo</option>
+									<option value="3">Crédito Pessoal</option>
+									<option value="4">Crédito Capital Giro</option>
 								</select>
 							</div>
 							<div class="col-md-6">
 								<label for="quantParcelas" class="form-label">Quantidade de parcelas</label>
-								<input type="number" class="form-control" id="quantParcelas" placeholder="">
+								<input type="number" class="form-control number" id="quantParcelas" min="1" required>
 							</div>
 							<div class="col-md-6">
-								<label for="dataAssinaturaMes" class="form-label">Dados do Assinante</label>
+								<label for="nomeAndTelefone" class="form-label">Dados do Assinante</label>
 								<div class="row">
 									<div class="col-md-6">
-										<input type="text" class="form-control" id="dataAssinaturaMes" placeholder="Nome">
+										<input type="text" class="form-control" id="Nome" placeholder="Nome" required>
 									</div>
 									<div class="col-md-6">
-										<input type="text" class="form-control" id="dataAssinaturaAno" placeholder="Telefone">
+										<input type="text" class="form-control phone" id="Telefone" placeholder="(99) 99999-9999" required>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<label for="parcelasPagas" class="form-label">Quantidade de parcelas pagas</label>
-								<input type="number" class="form-control" id="parcelasPagas" placeholder="">
+								<input type="number" class="form-control number" id="parcelasPagas" min="0" required>
 							</div>
 						</div>
 						<div class="row g-3 mt-4">
@@ -112,12 +118,12 @@
 								<button type="reset" class="btn btn-clear w-100">Limpar campos</button>
 							</div>
 							<div class="col-md-6 containerCalculadora">
-								<button type="submit" class="btn btn-orange w-100">Mostrar dados da dívida atual</button>
+								<button type="submit" class="btn btn-orange w-100 open-modal">Mostrar dados da dívida atual</button>
 							</div>
 						</div>
 					</form>
 				</div>
-			</section>		
+			</section>
 			
 			<section class="contact-services">
 				<div class="container-services">
@@ -128,7 +134,12 @@
 							<img src="images/leilao.webp" alt="Imagem do leilão">
 							<h3>LEILÃO EXTRAJUDICIAL</h3>
 							<p>A PBB Assessoria é referência em ações de suspensão de leilão extrajudicial.</p>
-							<button class="btn-contact">ENTRAR EM CONTATO</button>
+							<a href="https://wa.me/5551995746554?text=Olá, gostaria de atendimento sobre Leilão Extrajudicial!" 
+								rel="noopener"
+								target="_blank"
+								class="btn-contact d-flex align-items-center">
+								<i class="bi bi-whatsapp me-2"></i> Entrar em Contato
+							</a>
 						</div>
 			
 						<!-- Card 2 -->
@@ -136,7 +147,12 @@
 							<img src="images/revisional.webp" alt="Revisão contratual">
 							<h3>REVISÃO CONTRATUAL</h3>
 							<p>Analisamos contratos bancários para reduzir juros abusivos.</p>
-							<button class="btn-contact">ENTRAR EM CONTATO</button>
+							<a href="https://wa.me/5551995746554?text=Olá, gostaria de atendimento sobre Ações Revisionais!" 
+								rel="noopener"
+								target="_blank"
+								class="btn-contact d-flex align-items-center">
+								<i class="bi bi-whatsapp me-2"></i> Entrar em Contato
+							</a>
 						</div>
 			
 						<!-- Card 3 -->
@@ -144,7 +160,12 @@
 							<img src="images/titulos.webp" alt="Suporte jurídico">
 							<h3>Execução de Títulos</h3>
 							<p>Especializada em defesas de ações de execução de título extrajudicial e monitória.</p>
-							<button class="btn-contact">ENTRAR EM CONTATO</button>
+							<a href="https://wa.me/5551995746554?text=Olá, gostaria de atendimento sobre Execução de Títulos!" 
+								rel="noopener"
+								target="_blank"
+								class="btn-contact d-flex align-items-center">
+								<i class="bi bi-whatsapp me-2"></i> Entrar em Contato
+							</a>
 						</div>
 			
 						<!-- Card 4 -->
@@ -152,97 +173,22 @@
 							<img src="images/multas.JPG" alt="Ações Revisionais">
 							<h3>Multas de Transito</h3>
 							<p>Recursos e defesa administrativa e judicial contra multas e infrações de trânsito aplicadas.</p>
-							<button class="btn-contact">ENTRAR EM CONTATO</button>
+							<a href="https://wa.me/5551995746554?text=Olá, gostaria de atendimento sobre Multas de Transito!" 
+								rel="noopener"
+								target="_blank"
+								class="btn-contact d-flex align-items-center">
+								<i class="bi bi-whatsapp me-2"></i> Entrar em Contato
+							</a>
 						</div>
 					</div>
 				</div>
 			</section>
-			
-			
-			<!-- Contact -->
-			<!-- <section class="sectionService" id="services">
-				<div class="containerService">
-					<div class="row rowContact">
-						<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
-							<h2 class="titleContact">Entrar em contato</h2>
-							<p class="subtitleContact">Fale com nossa equipe e descubra a melhor estratégia para solucionar seus problemas.</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="owl-carousel owl-carousel-carousel">
-								<div class="item">
-									<div class="gtco-item">
-										<a href="#" class="open-modal" data-img="images/img_1.jpg" data-text="Descrição sobre New York Arena.">
-											<img src="images/revisional.webp" alt="" class="img-responsive">
-										</a>
-										<h2>Ações Revisionais</h2>
-										<p class="role">A PBB Assessoria atua com excelência em ações revisionais, ajustando contratos para condições mais justas, e na elaboração de defesas estratégicas em processos de busca e apreensão, assegurando os direitos e a tranquilidade de seus clientes com total segurança jurídica e eficiência.</p>
-										<a href="https://wa.me/5551995746554?text=Olá, gostaria de atendimento para Ações Revisionais!" 
-											rel="noopener"
-											target="_blank"
-											class="btn btn-success d-flex align-items-center">
-											<i class="bi bi-whatsapp me-2"></i> Entrar em Contato
-										</a>
-									</div>
-								</div>
-								<div class="item">
-									<div class="gtco-item">
-										<a href="#" class="open-modal" data-img="images/img_2.jpg" data-text="Descrição sobre Eagle Park.">
-											<img src="images/titulos.webp" alt="" class="img-responsive">
-										</a>
-										<h2>Execução de Título</h2>
-										<p class="role">A PBB Assessoria é especializada em defesas em ações de execução de título extrajudicial e monitória, atuando estrategicamente para contestar cobranças indevidas, apresentar argumentos jurídicos sólidos e garantir a proteção dos direitos e interesses de seus clientes com máxima dedicação e responsabilidade.</p>
-										<a href="https://wa.me/5551995746554?text=Olá, gostaria de atendimento para Execução de Título!" 
-											rel="noopener"
-											target="_blank"
-											class="btn btn-success d-flex align-items-center">
-											<i class="bi bi-whatsapp me-2"></i> Entrar em Contato
-										</a>
-									</div>
-								</div>
-								<div class="item">
-									<div class="gtco-item">
-										<a href="#" class="open-modal" data-img="images/img_3.jpg" data-text="Descrição sobre Nationals Park.">
-											<img src="images/leilao.webp" alt="" class="img-responsive">
-										</a>
-										<h2>Leilão Extrajudicial</h2>
-										<p class="role">A PBB Assessoria é referência em ações de suspensão de leilão extrajudicial, trabalhando de forma estratégica para proteger o patrimônio de seus clientes, identificando irregularidades no processo e garantindo que seus direitos sejam preservados com total segurança jurídica.</p>
-										<a href="https://wa.me/5551995746554?text=Olá, gostaria de atendimento para Leilão Extrajudicial!" 
-											rel="noopener"
-											target="_blank"
-											class="btn btn-success d-flex align-items-center">
-											<i class="bi bi-whatsapp me-2"></i> Entrar em Contato
-										</a>
-									</div>
-								</div>
-								<div class="item">
-									<div class="gtco-item">
-										<a href="#" class="open-modal" data-img="images/img_3.jpg" data-text="Descrição sobre Nationals Park.">
-											<img src="images/multas.JPG" alt="" class="img-responsive">
-										</a>
-										<h2>Multas de Transito</h2>
-										<p class="role">A PBB Assessoria oferece suporte especializado na elaboração de recursos de multas, analisando cada caso com atenção aos detalhes para identificar irregularidades e garantir a melhor defesa administrativa e judicial, buscando a redução ou anulação das penalidades com segurança e compromisso com seus clientes.</p>
-										<a href="https://wa.me/5551995746554?text=Olá, gostaria de atendimento para Multas de Transito!" 
-											rel="noopener"
-											target="_blank"
-											class="btn btn-success d-flex align-items-center">
-											<i class="bi bi-whatsapp me-2"></i> Entrar em Contato
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>  -->
-			<!-- End contact -->
 
 			<!-- Service -->
 			<section class="section-services" id="services">
 				<div class="container">
 					<div class="services-header">
-						<h2>Nossos Serviços</h2>
+						<h2>Conheça Todos os Nossos Serviços</h2>
 					</div>
 					<div class="services-grid">
 						<div class="service-card">
@@ -289,7 +235,6 @@
 					</div>
 				</div>
 			</section>
-			
 			<!-- End service -->
 
 			<!-- About -->
@@ -299,16 +244,16 @@
 						<div class="col about-text">
 							<h1>Sobre Nós</h1>
 							<p>
-								Somos uma assessoria contenciosa especializada em Direito Bancário, Direito do Consumidor e Direito do Condutor.
+								Somos uma assessoria jurídica especializada em Direito Bancário, Direito do Consumidor e Direito do Condutor.
 							</p>
 							<p>
-								Nossa equipe é formada por profissionais jovens, dinâmicos e altamente experientes, sempre comprometidos em oferecer soluções jurídicas eficazes e personalizadas.
+								Nossa equipe é composta por profissionais jovens, dinâmicos e experientes, comprometidos em oferecer soluções jurídicas eficazes e personalizadas.
 							</p>
 							<p>
-								Acreditamos em uma advocacia humanizada, pautada na transparência, no atendimento próximo e no compromisso com os melhores interesses de nossos clientes. Nosso objetivo é proporcionar segurança jurídica e estratégias assertivas, sempre com excelência e dedicação.
+								Priorizamos uma advocacia humanizada, transparente e próxima, focada nos melhores interesses dos clientes. Nosso objetivo é proporcionar segurança jurídica e estratégias assertivas, com excelência e dedicação.
 							</p>
 							<p>
-								Conte conosco para uma assessoria que alia conhecimento, inovação e proximidade no acompanhamento de suas demandas jurídicas.
+								Conte conosco para uma assessoria que combina conhecimento, inovação e proximidade em suas demandas jurídicas.
 							</p>
 						</div>
 						<div class="col about-image">
@@ -316,7 +261,7 @@
 						</div>
 					</div>
 			
-					<div class="row mission-vision">
+					<!-- <div class="row mission-vision">
 						<div class="col mission">
 							<h2>Missão</h2>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit!</p>
@@ -325,10 +270,9 @@
 							<h2>Visão</h2>
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit!</p>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</section>
-			
 			<!-- end about -->
 
 			<!-- Contact -->
@@ -374,16 +318,18 @@
 								<i class="fa-solid fa-star"></i>
 								<i class="fa-solid fa-star"></i>
 							</div>
-										<blockquote class="testimonial-quote">
-								"Experiência incrível! Desde o primeiro contato, fui muito bem atendido e recebi 
-								todas as informações de forma clara. Recomendo para todos!"
-							</blockquote>
+								<blockquote class="testimonial-quote">
+									"Graças à equipe da PBB Assessoria, conseguimos renegociar 
+									uma dívida com condições muito mais justas e eliminar os 
+									juros abusivos. Atendimento de excelência, sempre transparentes 
+									e muito atenciosos!"
+								</blockquote>
 										<div class="testimonial-author">
 								<div class="author-avatar">
-									<img src="images/person_1.jpg" alt="Imagem de uma pessoa">
+									<img src="images/author1.jpg" alt="Imagem de uma pessoa">
 								</div>
 											<div class="author-info">
-									<h3>Fulano de Tal</h3>
+									<h3>Juliano Santos</h3>
 									<p>Cliente desde 2023</p>
 								</div>
 							</div>
@@ -396,21 +342,21 @@
 								<i class="fa-solid fa-star"></i>
 								<i class="fa-solid fa-star"></i>
 							</div>
-										<blockquote class="testimonial-quote">
-								"Experiência incrível! Desde o primeiro contato, fui muito bem atendido e recebi 
-								todas as informações de forma clara. Recomendo para todos!"
-							</blockquote>
+								<blockquote class="testimonial-quote">
+									"Experiência incrível! Desde o primeiro contato, fui muito bem atendido e recebi 
+									todas as informações de forma clara e objetiva. Recomendo para todos!"
+								</blockquote>
 										<div class="testimonial-author">
 								<div class="author-avatar">
-									<img src="images/person_3.jpg" alt="Imagem de uma pessoa">
+									<img src="images/staff_3.jpg" alt="Imagem de uma pessoa">
 								</div>
 											<div class="author-info">
-									<h3>Fulano de Tal</h3>
+									<h3>Albert Constantino</h3>
 									<p>Cliente desde 2020</p>
 								</div>
 							</div>
 						</div>
-									<div class="swiper-slide">
+							<div class="swiper-slide">
 							<div class="testimonial-rate">
 								<i class="fa-solid fa-star"></i>
 								<i class="fa-solid fa-star"></i>
@@ -419,20 +365,21 @@
 								<i class="fa-solid fa-star"></i>
 							</div>
 										<blockquote class="testimonial-quote">
-								"Experiência incrível! Desde o primeiro contato, fui muito bem atendido e recebi 
-								todas as informações de forma clara. Recomendo para todos!"
+											Tinha uma multa que parecia impossível de contestar, mas a PBB Assessoria 
+											fez o trabalho impecável. Eles montaram um recurso sólido e a multa foi
+											anulada. Além da competência, o atendimento foi excepcional."
 							</blockquote>
 										<div class="testimonial-author">
 								<div class="author-avatar">
-									<img src="images/person_2.jpg" alt="Imagem de uma pessoa">
+									<img src="images/author4.png" alt="Imagem de uma pessoa">
 								</div>
 											<div class="author-info">
-									<h3>Fulano de Tal</h3>
+									<h3>Milena Jackes</h3>
 									<p>Cliente desde 2021</p>
 								</div>
 							</div>
 						</div>
-									<div class="swiper-slide">
+							<div class="swiper-slide">
 							<div class="testimonial-rate">
 								<i class="fa-solid fa-star"></i>
 								<i class="fa-solid fa-star"></i>
@@ -441,16 +388,18 @@
 								<i class="fa-solid fa-star"></i>
 							</div>
 										<blockquote class="testimonial-quote">
-								"Experiência incrível! Desde o primeiro contato, fui muito bem atendido e recebi 
-								todas as informações de forma clara. Recomendo para todos!"
+								"Fui muito bem atendido pela PBB Assessoria em um processo de busca 
+								e apreensão que me deixava angustiado.
+								Eles trabalharam com dedicação e me guiaram em cada etapa do processo.
+								Muito grato pelo excelente serviço prestado!"
 							</blockquote>
 										<div class="testimonial-author">
 								<div class="author-avatar">
-									<img src="images/person_1.jpg" alt="Imagem de uma pessoa">
+									<img src="images/author2.jpg" alt="Imagem de uma pessoa">
 								</div>
 											<div class="author-info">
-									<h3>Fulano de Tal</h3>
-									<p>Cliente desde 2018</p>
+									<h3>João Gutemberg de Souza</h3>
+									<p>Cliente desde 2021</p>
 								</div>
 							</div>
 						</div>
@@ -462,8 +411,6 @@
 				</div>
 			</section>
 			<!-- End testimonials -->
-			
-			
 		</div>
 
 		<!-- Footer -->
@@ -479,10 +426,10 @@
 				</div>
 				<!-- Ícones de Redes Sociais -->
 				<div class="col-12 col-md-4 socialLinks d-flex justify-content-center align-items-center">
-					<a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon mx-2">
+					<a href="https://www.facebook.com/profile.php?id=61571911811385" target="_blank" rel="noopener" class="social-icon mx-2">
 						<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="img-fluid" style="width: 30px;">
 					</a>
-					<a href="https://twitter.com" target="_blank" rel="noopener" class="social-icon mx-2">
+					<a href="https://twitter.com/pbbassessoria" target="_blank" rel="noopener" class="social-icon mx-2">
 						<img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="img-fluid" style="width: 30px;">
 					</a>
 					<a href="https://instagram.com/pbbassessoria" target="_blank" rel="noopener" class="social-icon mx-2">
@@ -510,6 +457,68 @@
 		</footer>			
 		<!-- END footer -->
 
+		<!-- Modal -->
+		<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Detalhes da Dívida</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-6">
+								<p><strong>Valor total da dívida:</strong> <span id="modalValorTotal"></span></p>
+							</div>
+							<div class="col-md-6">
+								<p><strong>Parcelas abertas:</strong> <span id="modalParcelasAbertas"></span></p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<p><strong>Juros contratado anual:</strong> <span id="modalJurosAnual"></span></p>
+							</div>
+							<div class="col-md-6">
+								<p><strong>Valor pago até o momento:</strong> <span id="modalValorPago"></span></p>
+							</div>
+						</div>
+						<div class="row ValorDevido">
+							<p><strong>Valor ainda devido:</strong> <span id="modalValorDevido"></span></p>
+						</div>
+						<div class="row rowTaxaJuros">
+							<div class="col-md-4">
+								<label for="taxaJuros" class="form-label">Taxa de juros anual:</label>
+								<input type="text" id="taxaJuros" class="form-control" placeholder="xx,xx">
+							</div>
+							<div class="col-md-8">
+								<button id="recalcular" class="btn btn-orange mt-3">Recalcular Dívida</button>
+							</div>
+						</div>
+						<!-- Novo valor recalculado (inicialmente oculto) -->
+						<div class="row mt-3" id="resultadoDivida" style="display: none;">
+							<div class="col-8">
+								<p class="novo-valor"><strong>Novo valor devido:</strong> <span id="novoValorDevido"></span></p>
+							</div>
+						</div>
+						<!-- Botão de contato (inicialmente oculto) -->
+						<div class="row-md-6" id="botaoContato" style="display: none;">
+							<p>Fale conosco e encontre a melhor estratégia para a <span class="destaque">reduzir</span> a sua <span class="destaque">DÍVIDA</span></p>
+							<div class="col-6 botaoContatoCol">
+								<a href="https://wa.me/5551995746554?text=Ol%C3%A1%2C%20gostaria%20de%20atendimento!" 
+									rel="noopener"
+									target="_blank"
+									class="btn btn-success d-flex align-items-center w80">
+									<i class="fab fa-whatsapp"></i> 
+									Entrar em Contato </a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- End Modal  -->
+
 		<div class="gototop js-top">
 			<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 		</div>
@@ -526,8 +535,15 @@
 	<script src="js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<!-- validation -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	<!-- Sections Observer -->
+	<script src="js/intersectionObserver.js"></script>
+	<!-- Modal -->
+	<script src="js/scriptModal.js"></script>
+	<script src="js/validatorData.js"></script>
 
 
 	</body>

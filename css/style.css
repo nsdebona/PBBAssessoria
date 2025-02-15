@@ -24,34 +24,74 @@ body {
 }
 
 /* Header Section */
+/* Estilizando o header fixo */
 header {
   position: fixed;
   top: 0;
   width: 100%;
+  background: linear-gradient(to top, 
+      rgba(255, 0, 0, 0) 40%,  /* Metade inferior transparente */
+      rgba(255, 0, 0, 0) 40%,  /* Sem transição */
+      #1d1d1d 40%,  /* Metade superior vermelha */
+      #1d1d1d 100%  /* Sem transição */
+  );
+  padding: 10px 0;
   z-index: 1000;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.logoHeader {
+
+/* Container do header */
+.container-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.logoImg {
-  height: 50px;
-  cursor: pointer;
-  z-index: 9999 !important;
+/* Logo alinhada à esquerda */
+.logoHeader {
+  flex: 0 0 25%; /* Ocupa 25% da largura */
+  display: flex;
+  align-items: center;
 }
 
 .logoImg img {
-  width: 220px;
+  width: 100%;
+  max-width: 180px; /* Tamanho máximo da logo */
   height: auto;
   border-radius: 25px;
-  border: 1px solid #1d1d1d
+  border: 1px solid #1d1d1d;
 }
+
+/* Menu alinhado à direita ocupando 75% */
+
+.menu-1 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu-1 ul li {
+  margin-left: 20px;
+}
+
+.menu-1 ul li a {
+  text-decoration: none;
+  color: #1d1d1d;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding: 10px 15px;
+}
+
+.menu-1 ul li a:hover,
+.menu-1 ul li.active a {
+  color: #007bff;
+}
+
+/* end Header Section */
 
 /* Ícone do WhatsApp */
 .iconWhatsapp {
@@ -64,14 +104,6 @@ header {
 .iconWhatsapp img {
   width: 50px;
   height: 50px;
-} 
-
-/* Estilo para o nav */
-.gtco-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: -83px !important;
 }
 
 /* Estilo da lista de navegação */
@@ -148,6 +180,10 @@ header {
   content: "";
 } */
 
+.spaceHeader {
+  width: 100%;
+  padding-top: 20rem;
+}
 
 /* Calculator Section */
 .calculator-section {
@@ -156,7 +192,7 @@ header {
   box-shadow: 0 4px 6px #1d1d1d;
   border-radius: 8px;
   max-width: 1440px;
-  margin: 6rem auto;
+  margin: 0 auto;
 }
 .containerCalculator {
   background-color: #545454;
@@ -240,6 +276,15 @@ input:focus, select:focus {
   justify-content: space-between;
   align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+  .btn-orange, .btn-clear {
+    font-family: 'roboto', sans-serif !important;
+    font-size: 9px !important;
+    font-weight: 800 !important;
+  }
+  
+}
 /* end calculator */
 
 /* Contact */
@@ -309,20 +354,22 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 
-.gtco-nav {
-  position: relative;
-  top: 0;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background-color: #1d1d1d;
+.menu-1 ul li a.active {
+  color: #f2e0c2;
 }
+
+.gtco-nav {
+  display: flex;
+  flex: 0 0 75%; 
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-bottom: 6rem;
+}
+
 @media screen and (max-width: 768px) {
   .gtco-nav {
     padding: 35px 0;
-    border-bottom: 1px solid #666666;
   }
   .gtco-logo img {
     width: 180px !important;
@@ -361,7 +408,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .gtco-nav ul li > a {
   text-transform: uppercase;
-  font-size: 20px !important;
+  font-size: 16px !important;
   letter-spacing: .05em;
 }
 .gtco-nav ul li a {
@@ -1892,6 +1939,8 @@ blockquote p > cite {
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .contact-cards {
@@ -2104,7 +2153,7 @@ blockquote p > cite {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 0;
   justify-content: center;
   box-shadow: 0px 0px 20px 0px rgba(92, 115, 160, 0.07);
   padding: 45px;
@@ -2124,11 +2173,17 @@ blockquote p > cite {
 
 .testimonial-quote {
   color: #637381;
-  font-size: 16px;
+  font-size: 15px;
+}
+@media screen and (max-width: 768px) {
+  .testimonial-quote {
+      font-size: 12px;
+  }
 }
 
 .testimonial-author {
   display: flex;
+  justify-content: right;
   align-items: center;
   gap: 14px;
   padding-bottom: 1rem;
@@ -2435,12 +2490,14 @@ blockquote p > cite {
 }
 
 .about-text p {
+  font-family: montserrat, sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #666;
+  color: #545454;
   margin-bottom: 10px;
   padding-left: 6rem;
   padding-right: 3rem;
+  text-align: center;
 }
 
 .about-image {
@@ -2465,7 +2522,7 @@ blockquote p > cite {
   position: absolute;
   top: -6px; 
   left: -6px; 
-  right: -26px; 
+  right: 20px; 
   bottom: -6px;
   border-radius: 20px;
   background: linear-gradient(5deg, #a58e698c, #a58e698c);
@@ -2524,6 +2581,8 @@ blockquote p > cite {
 
   .about-text {
       max-width: 100%;
+      margin: 0;
+      padding: 0;
   }
 
   .about-image img {
@@ -2546,15 +2605,18 @@ blockquote p > cite {
 }
 
   .about-text p {
-      margin: 5px;
-      text-align: center;
+      text-align: start;
       padding-bottom: 1rem;
+      font-family: 'roboto', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
   }
 }
 /* end About */
 
 /* footer */
 .rowFooter {
+  width: 100%;
   display: flex;
   flex-wrap: wrap; 
   justify-content: center; 
@@ -2626,7 +2688,9 @@ blockquote p > cite {
 @media (max-width: 768px) {
   .rowFooter {
     flex-direction: column; 
-    text-align: center; 
+    text-align: center;
+    padding: 0;
+    margin: 0;
   }
 
   .imageFooter, .enderecoFooter, .socialLinks {
@@ -2647,6 +2711,201 @@ blockquote p > cite {
 
 /* end footer */
 
+/* Modal */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilização do modal */
+.modal-content {
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f2e0c2;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Título do modal */
+.modal-header {
+  background-color: #ff6600;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.modal-title {
+  text-align: center;
+  color: #1d1d1d;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Botão de fechar */
+.btn-close {
+  color: #545454;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-close:hover {
+  color: #1d1d1d;
+  color: #fff;
+}
+
+/* Corpo do modal */
+.modal-body {
+  font-size: 16px;
+  color: #545454;
+}
+
+.modal-body p {
+  margin-bottom: 10px;
+  color: #1d1d1d;
+  font-weight: 600;
+  font-family: 'roboto', sans-serif;
+}
+
+.modal-body input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #545454;
+  border-radius: 5px;
+}
+
+.modal-body label {
+  font-family: 'roboto', sans-serif;
+  display: block;
+  margin-bottom: 5px;
+  color: #1d1d1d;
+  font-weight: 600;
+  padding: 2rem;
+}
+
+.modal-body #modalValorDevido {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #ff6600;
+  font-weight: bold;
+}
+
+/* Campos dentro do modal */
+.modal-body input {
+  width: 100%;
+  color: #1d1d1d;
+  border: 1px solid #a58e69;
+  border-radius: 15px;
+}
+
+.modal-body #rowTaxaJuros {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.ValorDevido {
+  color: #ff6600;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Botão de recalcular */
+#recalcular {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+#recalcular:hover {
+  background-color: #545454;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.resultadoDivida {
+  background-color: red;
+  color: white !important;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+}
+
+.novo-valor {
+  background-color: #a58e69;
+  color: white !important;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+}
+
+#botaoContato {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: white !important;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+#botaoContato ::before {
+  text-align: center;
+  font-size: 20px;
+}
+
+#novoValorDevido {
+  color: #ff6600 !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  font-size: xx-large !important;
+}
+
+.destaque {
+  color: #ff6600;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 25px;
+}
+
+.botaoContatoCol {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: white !important;
+  font-size: 25px;
+  font-weight: bold;
+} 
+
+.botaoContatoCol a {
+  width: 80%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+/* end Modal */
+
 /* Copyright */
 .footer-copyright {
   padding-top: 1rem;
@@ -2659,6 +2918,16 @@ blockquote p > cite {
 
 .linkFooter {
   color:#1d1d1d
+}
+
+@media screen and (max-width: 768px) {
+  .textFooter {
+    font-size: 10px;
+  }
+
+  .linkFooter {
+    font-size: 9px;
+  }
 }
 /* end Copyright */
 
