@@ -153,7 +153,6 @@ header {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-
   overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
@@ -2741,17 +2740,25 @@ blockquote p > cite {
 }
 
 /* Botão de fechar */
-.btn-close {
-  color: #545454;
-  background: none;
+#fecharModal {
+  position: absolute;
+  text-align: center;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  background-color: transparent;
+  border-radius: 100%;
   border: none;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
+  z-index: 9999;
 }
 
-.btn-close:hover {
+#fecharModal:hover {
+  opacity: 1;
   color: #1d1d1d;
-  color: #fff;
 }
 
 /* Corpo do modal */
@@ -2818,13 +2825,13 @@ blockquote p > cite {
 
 /* Botão de recalcular */
 #recalcular {
-  background-color: #ff6600;
+  width: 100%;
   color: white;
+  background-color: #ff6600;
   border: none;
   padding: 10px;
   border-radius: 5px;
-  width: 100%;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   transition: 0.3s;
   margin-top: 10px;
@@ -2837,13 +2844,11 @@ blockquote p > cite {
 }
 
 .resultadoDivida {
-  background-color: red;
-  color: white !important;
-  font-weight: bold;
-  padding: 10px;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  margin: 1rem auto;
   padding: 2rem;
-  margin-top: 1rem;
   border-radius: 5px;
 }
 
@@ -2851,6 +2856,7 @@ blockquote p > cite {
   background-color: #a58e69;
   color: white !important;
   font-weight: bold;
+  font-size: 18px;
   padding: 10px;
   text-align: center;
   padding: 2rem;
@@ -2873,7 +2879,14 @@ blockquote p > cite {
 }
 
 #novoValorDevido {
-  color: #ff6600 !important;
+  color: #1d1d1d !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  font-size: xx-large !important;
+}
+
+#novoValorParcelas {
+  color: #1d1d1d !important;
   font-weight: bold !important;
   text-transform: uppercase !important;
   font-size: xx-large !important;
@@ -2902,6 +2915,16 @@ blockquote p > cite {
   align-items: center;
   font-size: large;
   font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .botaoContatoCol {
+    font-size: 10px;
+  }
+
+  .botaoContatoCol a {
+    font-size: 10px;
+  }
 }
 
 /* end Modal */

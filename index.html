@@ -352,7 +352,7 @@
 								</div>
 											<div class="author-info">
 									<h3>Albert Constantino</h3>
-									<p>Cliente desde 2020</p>
+									<p>Cliente desde 2023</p>
 								</div>
 							</div>
 						</div>
@@ -375,7 +375,7 @@
 								</div>
 											<div class="author-info">
 									<h3>Milena Jackes</h3>
-									<p>Cliente desde 2021</p>
+									<p>Cliente desde 2024</p>
 								</div>
 							</div>
 						</div>
@@ -399,7 +399,7 @@
 								</div>
 											<div class="author-info">
 									<h3>João Gutemberg de Souza</h3>
-									<p>Cliente desde 2021</p>
+									<p>Cliente desde 2024</p>
 								</div>
 							</div>
 						</div>
@@ -463,7 +463,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title">Detalhes da Dívida</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<button type="button" id="fecharModal" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
 					</div>
 					<div class="modal-body">
 						<div class="row">
@@ -476,28 +476,26 @@
 						</div>
 						<div class="row">
 							<div class="col-md-6">
-								<p><strong>Juros contratado anual:</strong> <span id="modalJurosAnual"></span></p>
-							</div>
-							<div class="col-md-6">
 								<p><strong>Valor pago até o momento:</strong> <span id="modalValorPago"></span></p>
 							</div>
 						</div>
 						<div class="row ValorDevido">
-							<p><strong>Valor ainda devido:</strong> <span id="modalValorDevido"></span></p>
+							<p><strong>Valor devido:</strong> <span id="modalValorDevido"></span></p>
 						</div>
 						<div class="row rowTaxaJuros">
-							<div class="col-md-4">
-								<label for="taxaJuros" class="form-label">Taxa de juros anual:</label>
-								<input type="text" id="taxaJuros" class="form-control" placeholder="xx,xx">
-							</div>
-							<div class="col-md-8">
+							<div class="col-8">
 								<button id="recalcular" class="btn btn-orange mt-3">Recalcular Dívida</button>
 							</div>
 						</div>
 						<!-- Novo valor recalculado (inicialmente oculto) -->
 						<div class="row mt-3" id="resultadoDivida" style="display: none;">
 							<div class="col-8">
-								<p class="novo-valor"><strong>Novo valor devido:</strong> <span id="novoValorDevido"></span></p>
+								<p class="novo-valor"><strong>Valor Devido:</strong> <span id="novoValorDevido"></span></p>
+							</div>
+						</div>
+						<div class="row mt-3" id="resultadoParcelas" style="display: none;">
+							<div class="col-8">
+								<p class="novo-valor"><strong>Valor da parcela Corrigido:</strong> <span id="novoValorParcelas"></span></p>
 							</div>
 						</div>
 						<!-- Botão de contato (inicialmente oculto) -->
