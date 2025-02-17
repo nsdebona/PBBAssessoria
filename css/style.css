@@ -146,7 +146,7 @@ header {
 }
 /* end Header Section */
 
-#page {
+/* #page {
   max-width: 1440px;
   display: flex;
   flex-direction: column;
@@ -160,8 +160,8 @@ header {
   -o-transition: 0.5s;
   transition: 0.5s;
   padding-top: 10rem;
-}
-.offcanvas #page {
+} */
+/* .offcanvas #page {
   overflow: hidden;
   position: absolute;
 }
@@ -177,7 +177,7 @@ header {
   z-index: 101;
   background: rgba(0, 0, 0, 0.7);
   content: "";
-}
+} */
 
 .spaceHeader {
   width: 100%;
