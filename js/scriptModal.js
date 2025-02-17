@@ -1,70 +1,71 @@
 $(document).ready(function () {
-    // Desabilitar o botão inicialmente
-    $("#recalcular").prop("disabled", false);
-
     $(".open-modal").click(function (e) {
         e.preventDefault();
 
-        // Captura os valores preenchidos no formulário
+        // Captura os valores preenchidos no formulário e faz as validações
         let valorFinanciado = parseFloat($("#valorFinanciado").val().replace(/[^0-9,]/g, '').replace(',', '.')) || 0;
-        let quantParcelas = parseFloat($("#quantParcelas").val()) || 0;
-        let parcelasPagas = parseFloat($("#parcelasPagas").val()) || 0;
+        let quantParcelas = parseInt($("#quantParcelas").val()) || 0;
+        let parcelasPagas = parseInt($("#parcelasPagas").val()) || 0;
         let valorPrestacao = parseFloat($("#valorPrestacao").val().replace(/[^0-9,]/g, '').replace(',', '.')) || 0;
+
+        // Validações
+        if (valorFinanciado <= 0 || isNaN(valorFinanciado)) {
+            alert("Por favor, insira um valor financiado válido.");
+            return;
+        }
+
+        if (quantParcelas <= 0 || isNaN(quantParcelas)) {
+            alert("Por favor, insira a quantidade de parcelas válidas.");
+            return;
+        }
+
+        if (parcelasPagas < 0 || parcelasPagas > quantParcelas || isNaN(parcelasPagas)) {
+            alert("O número de parcelas pagas não pode ser maior que o número total de parcelas.");
+            return;
+        }
+
+        if (valorPrestacao <= 0 || isNaN(valorPrestacao)) {
+            alert("Por favor, insira um valor de prestação válido.");
+            return;
+        }
 
         let valorPago = parcelasPagas * valorPrestacao;
         let valorDevido = valorFinanciado - valorPago;
+
+        if (valorPago > valorDevido) {
+            alert("O valor pago não pode ser maior que o valor devido.");
+            return;
+        }
+
         let parcelasAbertas = quantParcelas - parcelasPagas;
 
-        // Exibe os valores no modal
-        $("#modalValorTotal").text(valorFinanciado.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}));
+        $("#modalValorTotal").text(valorFinanciado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
         $("#modalParcelasAbertas").text(parcelasAbertas);
-        $("#modalValorPago").text(valorPago.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}));
-        $("#modalValorDevido").text(valorDevido.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}));
+        $("#modalValorPago").text(valorPago.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
+        $("#modalValorDevido").text(valorDevido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
 
-        // Reseta os campos de novo valor e botão de contato ao abrir o modal
-        $("#resultadoDivida").hide();
-        $("#resultadoParcelas").hide();
-        $("#botaoContato").hide();
+        // Calcula novo valor e nova parcela corrigidos
+        let novoValor = valorDevido * 0.35;
+        let novoValorParcelas = valorPrestacao * 0.62;
 
-        // Remove eventos anteriores e adiciona o evento para recalcular a dívida
-        $("#recalcular").off("click").one("click", function () {
-            let novoValor = valorDevido * 0.52; // Novo valor devido (redução de 48%)
-            let novoValorParcelas = valorPrestacao * 0.38; // Novo valor da prestação (redução de 52%)
+        novoValor = novoValor.toFixed(2);
+        novoValorParcelas = novoValorParcelas.toFixed(2);
 
-            // Formata os valores para duas casas decimais
-            novoValor = novoValor.toFixed(2);
-            novoValorParcelas = novoValorParcelas.toFixed(2);
+        $("#novoValorDevido").text(novoValor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
+        $("#novoValorParcelas").text(novoValorParcelas.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
 
-            // Atualiza os valores no modal
-            $("#novoValorDevido").text(novoValor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}));
-            $("#novoValorParcelas").text(novoValorParcelas.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}));
+        let whatsappMessage = encodeURIComponent(`Olá, gostaria de mais informações sobre a revisão da minha dívida. 
+                O novo valor calculado foi de ${novoValor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}.`);
+        let whatsappLink = `https://wa.me/5551996537886?text=${whatsappMessage}`;
 
-            // Exibe os resultados e o botão de contato
-            $("#resultadoDivida").fadeIn();
-            $("#resultadoParcelas").fadeIn();
-            $("#botaoContato").fadeIn();
-  
-            // Gera o link do WhatsApp
-            let whatsappMessage = encodeURIComponent(`Olá, gostaria de mais informações sobre a revisão da minha dívida. 
-                O novo valor calculado foi de ${novoValor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.`);
-            let whatsappLink = `https://wa.me/5551996537886?text=${whatsappMessage}`;
+        $("#whatsappLink").attr("href", whatsappLink);
+        $(this).prop("disabled", true);
 
-            // Atualiza o botão de contato
-            $("#whatsappLink").attr("href", whatsappLink);
-            $(this).prop("disabled", true);
-        });
-
-        // Abre o modal
         $("#imageModal").modal("show");
 
-        // fechar o modal
         $("#fecharModal").click(function () {
             $("#imageModal").modal("hide");
+            $(".open-modal").prop("disabled", false);  
         });
-    });
-
-    // Habilita o botão ao detectar qualquer entrada
-    $("#taxaJuros").on("input", function () {
-        $("#recalcular").prop("disabled", false);
     });
 });

@@ -98,32 +98,37 @@
 								<input type="number" class="form-control number" id="quantParcelas" min="1" required>
 							</div>
 							<div class="col-md-6">
-								<label for="nomeAndTelefone" class="form-label">Dados do Assinante</label>
-								<div class="row">
-									<div class="col-md-6">
-										<input type="text" class="form-control" id="Nome" placeholder="Nome" required>
-									</div>
-									<div class="col-md-6">
-										<input type="text" class="form-control phone" id="Telefone" placeholder="(99) 99999-9999" required>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
 								<label for="parcelasPagas" class="form-label">Quantidade de parcelas pagas</label>
 								<input type="number" class="form-control number" id="parcelasPagas" min="0" required>
 							</div>
+							<div class="col-md-6">
+								<fieldset>
+									<legend class="dadosAssinante"></legend>
+									<div class="row">
+										<div class="col-md-6">
+											<label for="Nome">Nome</label>
+											<input type="text" class="form-control" id="Nome" placeholder="Nome" required>
+										</div>
+										<div class="col-md-6">
+											<label for="Telefone">Telefone</label>
+											<input type="text" class="form-control phone" id="Telefone" placeholder="(99) 99999-9999" required>
+										</div>
+									</div>
+							</fieldset>
 						</div>
-						<div class="row g-3 mt-4">
-							<div class="col-md-6 containerCalculadora">
-								<button type="reset" class="btn btn-clear w-100">Limpar campos</button>
-							</div>
-							<div class="col-md-6 containerCalculadora">
-								<button type="submit" class="btn btn-orange w-100 open-modal">Mostrar dados da dívida atual</button>
-							</div>
+					</div>
+					<div class="row g-3 mt-4">
+						<div class="col-md-6 containerCalculadora">
+							<button type="reset" class="btn btn-clear w-100">Limpar campos</button>
 						</div>
-					</form>
-				</div>
-			</section>
+						<div class="col-md-6 containerCalculadora">
+							<button type="submit" class="btn btn-orange w-100 open-modal">Mostrar dados da dívida atual</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+			<!-- end calculator -->
 			
 			<section class="contact-services">
 				<div class="container-services">
@@ -171,7 +176,7 @@
 						<!-- Card 4 -->
 						<div class="contact-card">
 							<img src="images/multas.JPG" alt="Ações Revisionais">
-							<h3>Multas de Transito</h3>
+							<h3>Multas de Trânsito</h3>
 							<p>Recursos e defesa administrativa e judicial contra multas e infrações de trânsito aplicadas.</p>
 							<a href="https://wa.me/5551995746554?text=Olá, gostaria de atendimento sobre Multas de Transito!" 
 								rel="noopener"
@@ -260,17 +265,6 @@
 							<img src="images/aboutT1.jpg" alt="Advogado trabalhando">
 						</div>
 					</div>
-			
-					<!-- <div class="row mission-vision">
-						<div class="col mission">
-							<h2>Missão</h2>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit!</p>
-						</div>
-						<div class="col vision">
-							<h2>Visão</h2>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit!</p>
-						</div>
-					</div> -->
 				</div>
 			</section>
 			<!-- end about -->
@@ -325,16 +319,13 @@
 									e muito atenciosos!"
 								</blockquote>
 										<div class="testimonial-author">
-								<div class="author-avatar">
-									<img src="images/author1.jpg" alt="Imagem de uma pessoa">
+									<div class="author-info">
+										<h3>Juliano Santos</h3>
+										<p>Cliente desde 2023</p>
+									</div>
 								</div>
-											<div class="author-info">
-									<h3>Juliano Santos</h3>
-									<p>Cliente desde 2023</p>
-								</div>
-							</div>
 						</div>
-									<div class="swiper-slide">
+								<div class="swiper-slide">
 							<div class="testimonial-rate">
 								<i class="fa-solid fa-star"></i>
 								<i class="fa-solid fa-star"></i>
@@ -347,67 +338,58 @@
 									todas as informações de forma clara e objetiva. Recomendo para todos!"
 								</blockquote>
 										<div class="testimonial-author">
-								<div class="author-avatar">
-									<img src="images/staff_3.jpg" alt="Imagem de uma pessoa">
+									<div class="author-info">
+										<h3>Albert Constantino</h3>
+										<p>Cliente desde 2023</p>
+									</div>
 								</div>
-											<div class="author-info">
-									<h3>Albert Constantino</h3>
-									<p>Cliente desde 2023</p>
-								</div>
-							</div>
 						</div>
-							<div class="swiper-slide">
-							<div class="testimonial-rate">
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-							</div>
-										<blockquote class="testimonial-quote">
-											Tinha uma multa que parecia impossível de contestar, mas a PBB Assessoria 
-											fez o trabalho impecável. Eles montaram um recurso sólido e a multa foi
-											anulada. Além da competência, o atendimento foi excepcional."
+						<div class="swiper-slide">
+						<div class="testimonial-rate">
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+						</div>
+								<blockquote class="testimonial-quote">
+									Tinha uma multa que parecia impossível de contestar, mas a PBB Assessoria 
+									fez o trabalho impecável. Eles montaram um recurso sólido e a multa foi
+									anulada. Além da competência, o atendimento foi excepcional."
 							</blockquote>
 										<div class="testimonial-author">
-								<div class="author-avatar">
-									<img src="images/author4.png" alt="Imagem de uma pessoa">
+									<div class="author-info">
+										<h3>Milena Jackes</h3>
+										<p>Cliente desde 2024</p>
+									</div>
 								</div>
-											<div class="author-info">
-									<h3>Milena Jackes</h3>
-									<p>Cliente desde 2024</p>
-								</div>
-							</div>
+					</div>
+						<div class="swiper-slide">
+						<div class="testimonial-rate">
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
 						</div>
-							<div class="swiper-slide">
-							<div class="testimonial-rate">
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-							</div>
-										<blockquote class="testimonial-quote">
-								"Fui muito bem atendido pela PBB Assessoria em um processo de busca 
-								e apreensão que me deixava angustiado.
-								Eles trabalharam com dedicação e me guiaram em cada etapa do processo.
-								Muito grato pelo excelente serviço prestado!"
-							</blockquote>
-										<div class="testimonial-author">
-								<div class="author-avatar">
-									<img src="images/author2.jpg" alt="Imagem de uma pessoa">
-								</div>
-											<div class="author-info">
+								<blockquote class="testimonial-quote">
+						"Fui muito bem atendido pela PBB Assessoria em um processo de busca 
+						e apreensão que me deixava angustiado.
+						Eles trabalharam com dedicação e me guiaram em cada etapa do processo.
+						Muito grato pelo excelente serviço prestado!"
+					</blockquote>
+									<div class="testimonial-author">
+								<div class="author-info">
 									<h3>João Gutemberg de Souza</h3>
 									<p>Cliente desde 2024</p>
 								</div>
 							</div>
-						</div>
 					</div>
-					<div class="swiper-pagination"></div>
-				
-					<div class="swiper-button-prev"></div>
-					<div class="swiper-button-next"></div>
+				</div>
+				<div class="swiper-pagination"></div>
+			
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
 				</div>
 			</section>
 			<!-- End testimonials -->
@@ -482,38 +464,33 @@
 						<div class="row ValorDevido">
 							<p><strong>Valor devido:</strong> <span id="modalValorDevido"></span></p>
 						</div>
-						<div class="row rowTaxaJuros">
-							<div class="col-8">
-								<button id="recalcular" class="btn btn-orange mt-3">Recalcular Dívida</button>
-							</div>
-						</div>
-						<!-- Novo valor recalculado (inicialmente oculto) -->
-						<div class="row mt-3" id="resultadoDivida" style="display: none;">
+						<div class="row mt-3" id="resultadoDivida">
 							<div class="col-8">
 								<p class="novo-valor"><strong>Valor Devido:</strong> <span id="novoValorDevido"></span></p>
 							</div>
 						</div>
-						<div class="row mt-3" id="resultadoParcelas" style="display: none;">
+						<div class="row mt-3" id="resultadoParcelas">
 							<div class="col-8">
 								<p class="novo-valor"><strong>Valor da parcela Corrigido:</strong> <span id="novoValorParcelas"></span></p>
 							</div>
 						</div>
-						<!-- Botão de contato (inicialmente oculto) -->
-						<div class="row-md-6" id="botaoContato" style="display: none;">
-							<p>Fale conosco e encontre a melhor estratégia para a <span class="destaque">reduzir</span> a sua <span class="destaque">DÍVIDA</span></p>
-							<div class="col-6 botaoContatoCol">
-								<a href="https://wa.me/5551995746554?text=Ol%C3%A1%2C%20gostaria%20de%20atendimento!" 
-									rel="noopener"
-									target="_blank"
-									class="btn btn-success d-flex align-items-center w80">
-									<i class="fab fa-whatsapp"></i> 
-									Entrar em Contato </a>
+						<div class="row" id="botaoContato">
+							<div class="col-8">
+								<p>Fale conosco e encontre a melhor estratégia para a <span class="destaque">reduzir</span> a sua <span class="destaque">DÍVIDA</span></p>
+								<div class="col-6 botaoContatoCol">
+									<a href="https://wa.me/5551995746554?text=Ol%C3%A1%2C%20gostaria%20de%20atendimento!" 
+									   rel="noopener" target="_blank" class="btn btn-success d-flex align-items-center w-100">
+										<i class="fab fa-whatsapp"></i> Entrar em Contato 
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		
+		
 		
 		<!-- End Modal  -->
 
