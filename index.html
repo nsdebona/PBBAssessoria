@@ -31,31 +31,61 @@
 
 		<!-- Modernizr JS -->
 		<script src="js/modernizr-2.6.2.min.js"></script>
+
+		<!-- Meta Pixel -->
+		 <script>
+			!function(f,b,e,v,n,t,s)
+			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+			n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t,s)}(window, document,'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+			fbq('init', '1315088886413741');
+			fbq('track', 'PageView');
+		</script>
+		<noscript><img height="1" width="1" style="display:none"
+			src="https://www.facebook.com/tr?id=1315088886413741&ev=PageView&noscript=1"
+		/></noscript>
+
 	</head>
 
 	<body>
 		<header>
 			<div class="container-header">
-				<div class="logoHeader">
-					<div class="logoImg">
-						<img src="images/PBB_Assessoria.svg" alt="PBB Assessoria Jurídica" href="#topo">
-					</div>
+			  <div class="logoHeader">
+				<div class="logoImg">
+				  <img src="images/PBB_Assessoria.svg" alt="PBB Assessoria Jurídica" />
 				</div>
-				<nav class="gtco-nav" role="navigation">
-					<div class="menu-1">
-						<ul>
-							<li><a href="#topo">Início</a></li>
-							<li><a href="#calculadora">Calculadora</a></li>
-							<li><a href="#services">Serviços</a></li>
-							<li><a href="#contact">Contatos</a></li>
-							<li><a href="#about">Quem Somos</a></li>
-							<li><a href="#testimonials">Depoimentos</a></li>
-						</ul>
-					</div>
-				</nav>
+			  </div>
+		  
+			  <!-- Botão Hamburguer -->
+			  <button class="menu-toggle" aria-label="Abrir menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			  </button>
+		  
+			  <!-- Botão Fechar -->
+			  
+			  <nav class="gtco-navigate">
+				<div class="menu15">
+				  <button class="menu-close" aria-label="Fechar menu">&times;</button>
+				  <ul>
+					<li><a href="#topo">Início</a></li>
+					<li><a href="#services">Serviços</a></li>
+					<li><a href="#about">Sobre Nós</a></li>
+					<li><a href="#calculadora">Calculadora</a></li>
+					<li><a href="#contact">Contatos</a></li>
+					<li><a href="#testimonials">Depoimentos</a></li>
+					<li><a href="privacy.html">Política de Privacidade</a></li>
+				  </ul>
+				</div>
+			  </nav>
 			</div>
 		</header>
-		<!-- Adicione um elemento com id="topo" no topo da página -->
+		
 		<div id="topo"></div>
 		<div id="page">
 			<!-- whatsapp icon -->
@@ -68,71 +98,6 @@
 			<div class="spaceHeader">
 			</div>
 
-			<!-- Calculator Section -->
-			<section class="calculator-section" id="calculadora">
-				<div class="containerCalculator">
-					<h2 class="form-titleCalculator">Calculadora online Revisional</h2>
-					<h3 class="form-titleSubCalculator">Informe os dados do seu financiamento</h3>
-					<form id="calculadoraForm" action="https://formsubmit.co/pbbassessoria@gmail.com" method="POST">
-						<div class="row g-3">
-							<div class="col-md-6">
-								<label for="valorFinanciado" class="form-label">Valor financiado</label>
-								<input type="text" class="form-control money" id="valorFinanciado" name="valorFinanciado" placeholder="R$ x.xxx,xx" required>
-							</div>
-							<div class="col-md-6">
-								<label for="valorPrestacao" class="form-label">Valor da prestação</label>
-								<input type="text" class="form-control money" id="valorPrestacao" name="valorPrestacao" placeholder="R$ x.xxx,xx" required>
-							</div>
-							<div class="col-md-6">
-								<label for="tipoContrato" class="form-label">Tipo do Contrato: </label>
-								<select id="tipoContrato" name="tipoContrato" class="form-select" required>
-									<option selected disabled>Selecione</option>
-									<option value="1">Imobiliário</option>
-									<option value="2">Veículo</option>
-									<option value="3">Crédito Pessoal</option>
-									<option value="4">Crédito Capital Giro</option>
-								</select>
-							</div>
-							<div class="col-md-6">
-								<label for="quantParcelas" class="form-label">Quantidade de parcelas</label>
-								<input type="number" class="form-control number" id="quantParcelas" name="quantParcelas" min="1" required>
-							</div>
-							<div class="col-md-6">
-								<label for="parcelasPagas" class="form-label">Quantidade de parcelas pagas</label>
-								<input type="number" class="form-control number" id="parcelasPagas" name="parcelasPagas" min="0" required>
-							</div>
-							<div class="col-md-6">
-								<fieldset>
-									<legend class="dadosAssinante"></legend>
-									<div class="row">
-										<div class="col-md-6">
-											<label for="Nome">Nome</label>
-											<input type="text" class="form-control" id="Nome" name="Nome" placeholder="Nome" required>
-										</div>
-										<div class="col-md-6">
-											<label for="Telefone">Telefone</label>
-											<input type="text" class="form-control phone" id="Telefone" name="Telefone" placeholder="(99) 99999-9999" required>
-										</div>
-									</div>
-								</fieldset>
-							</div>
-						</div>
-						<div class="row g-3 mt-4">
-							<div class="col-md-6 containerCalculadora">
-								<button type="reset" class="btn btn-clear w-100">Limpar campos</button>
-							</div>
-							<div class="col-md-6 containerCalculadora">
-								<button type="submit" class="btn btn-orange w-100 open-modal">Mostrar dados da dívida atual</button>
-							</div>
-						</div>
-						<!-- Hidden email field for formSubmit -->
-						<input type="hidden" name="_subject" value="Novo formulário de calculadora online revisional">
-					</form>
-				</div>
-			</section>
-			
-			<!-- end calculator -->
-			
 			<section class="contact-services">
 				<div class="container-services">
 					<h2>Destaques</h2>
@@ -272,6 +237,70 @@
 			</section>
 			<!-- end about -->
 
+			<!-- Calculator Section -->
+			<section class="calculator-section" id="calculadora">
+				<div class="containerCalculator">
+					<h2 class="form-titleCalculator">Calculadora online Revisional</h2>
+					<h3 class="form-titleSubCalculator">Informe os dados do seu financiamento</h3>
+					<form id="calculadoraForm" action="https://formsubmit.co/pbbassessoria@gmail.com" method="POST">
+						<div class="row g-3">
+							<div class="col-md-6">
+								<label for="valorFinanciado" class="form-label">Valor financiado</label>
+								<input type="text" class="form-control money" id="valorFinanciado" name="valorFinanciado" placeholder="R$ x.xxx,xx" required>
+							</div>
+							<div class="col-md-6">
+								<label for="valorPrestacao" class="form-label">Valor da prestação</label>
+								<input type="text" class="form-control money" id="valorPrestacao" name="valorPrestacao" placeholder="R$ x.xxx,xx" required>
+							</div>
+							<div class="col-md-6">
+								<label for="tipoContrato" class="form-label">Tipo do Contrato: </label>
+								<select id="tipoContrato" name="tipoContrato" class="form-select" required>
+									<option selected disabled>Selecione</option>
+									<option value="1">Imobiliário</option>
+									<option value="2">Veículo</option>
+									<option value="3">Crédito Pessoal</option>
+									<option value="4">Crédito Capital Giro</option>
+								</select>
+							</div>
+							<div class="col-md-6">
+								<label for="quantParcelas" class="form-label">Quantidade de parcelas</label>
+								<input type="number" class="form-control number" id="quantParcelas" name="quantParcelas" min="1" required>
+							</div>
+							<div class="col-md-6">
+								<label for="parcelasPagas" class="form-label">Quantidade de parcelas pagas</label>
+								<input type="number" class="form-control number" id="parcelasPagas" name="parcelasPagas" min="0" required>
+							</div>
+							<div class="col-md-6">
+								<fieldset>
+									<legend class="dadosAssinante"></legend>
+									<div class="row">
+										<div class="col-md-6">
+											<label for="Nome">Nome</label>
+											<input type="text" class="form-control" id="Nome" name="Nome" placeholder="Nome" required>
+										</div>
+										<div class="col-md-6">
+											<label for="Telefone">Telefone</label>
+											<input type="text" class="form-control phone" id="Telefone" name="Telefone" placeholder="(99) 99999-9999" required>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+						<div class="row g-3 mt-4">
+							<div class="col-md-6 containerCalculadora">
+								<button type="reset" class="btn btn-clear w-100">Limpar campos</button>
+							</div>
+							<div class="col-md-6 containerCalculadora">
+								<button type="submit" class="btn btn-orange w-100 open-modal">Mostrar dados da dívida atual</button>
+							</div>
+						</div>
+						<!-- Hidden email field for formSubmit -->
+						<input type="hidden" name="_subject" value="Novo formulário de calculadora online revisional">
+					</form>
+				</div>
+			</section>
+			<!-- end calculator -->
+
 			<!-- Contact -->
 			<section class="sectionContact" id="contact">
 				<div class="headerContact">
@@ -407,7 +436,7 @@
 				</div>
 				<!-- Endereço -->
 				<div class="col-12 col-md-4 mb-3 mb-md-0 enderecoFooter">
-					<p class="addressFooter">Rua Santo Inácio, Bairro Moinhos de Vento<br>Porto Alegre - Rio Grande do Sul<br>CEP 90570-150</p>
+					<p class="addressFooter">Av. Assis Brasil, 2827, sala 1501, 15º andar, Edificio MedPlex, Bairro Cristo Redentor<br>Porto Alegre - Rio Grande do Sul<br>CEP 90570-150</p>
 				</div>
 				<!-- Ícones de Redes Sociais -->
 				<div class="col-12 col-md-4 socialLinks d-flex justify-content-center align-items-center">
@@ -429,11 +458,11 @@
 				</div>
 			</div>				
 			<div class="footer-copyright">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="copyright text-center">
-								<p class="textFooter">Copyright © 2025 <a class="linkFooter" rel="nofollow" href="https://pbbassessoria.com.br">PBB Assessoria Jurídica</a> - desenvolvido por <a class="linkFooter" el="nofollow" href="https://www.linkedin.com/in/nsdebona/">Natanael da Silva Debona</a></p>
+				<div class="container footerCopyright">
+					<div class="row rowCopyright">
+						<div class="col-lg-12 colCopyright">
+							<div class="classCopyright">
+								<p class="textFooter">Copyright © 2025 <a class="linkFooter" rel="nofollow" href="https://pbbassessoria.com.br">PBB Assessoria Jurídica</a>- desenvolvido por <a class="linkFooter" el="nofollow" href="https://www.linkedin.com/in/nsdebona/">Natanael da Silva Debona</a></p>
 							</div>
 						</div>
 					</div>
@@ -492,15 +521,62 @@
 				</div>
 			</div>
 		</div>
-		
-		
-		
 		<!-- End Modal  -->
 
 		<div class="gototop js-top">
 			<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 		</div>
-		
+	
+		<script>
+			const toggleBtn = document.querySelector('.menu-toggle');
+			const closeBtn = document.querySelector('.menu-close');
+			const menu = document.querySelector('.menu15');
+			const menuLinks = document.querySelectorAll('.menu15 a');
+			const sections = document.querySelectorAll("section[id]");
+		  
+			// Abre o menu
+			toggleBtn.addEventListener('click', () => {
+			  menu.classList.add('active');
+			  toggleBtn.classList.add('hide');
+			});
+		  
+			// Fecha o menu com o X
+			closeBtn.addEventListener('click', () => {
+			  menu.classList.remove('active');
+			  toggleBtn.classList.remove('hide');
+			});
+		  
+			// Fecha ao clicar em qualquer link
+			menuLinks.forEach(link => {
+			  link.addEventListener('click', () => {
+				menu.classList.remove('active');
+				toggleBtn.classList.remove('hide');
+			  });
+			});
+		  
+			// ScrollSpy: ativa link conforme scroll
+			function onScroll() {
+			  let scrollPos = window.scrollY + 100;
+		  
+			  sections.forEach(section => {
+				const top = section.offsetTop;
+				const height = section.offsetHeight;
+				const id = section.getAttribute("id");
+		  
+				if (scrollPos >= top && scrollPos < top + height) {
+				  menuLinks.forEach(link => {
+					link.classList.remove("active");
+					if (link.getAttribute("href") === `#${id}`) {
+					  link.classList.add("active");
+					}
+				  });
+				}
+			  });
+			}
+		  
+			window.addEventListener("scroll", onScroll);
+		</script>
+
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
